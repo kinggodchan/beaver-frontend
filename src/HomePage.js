@@ -36,7 +36,7 @@ const HomePage = () => {
         </nav>
       </header>
       {showMenu ? (
-        <MenuPage onClose={handleMenuToggle} /> // 메뉴 페이지 표시
+        <MenuPage onClose={handleMenuToggle} /> 
       ) : (
         <div className="main-content">
           <img src={soccerImage} alt="Soccer" className="main-image" /> {/* soccer.png 적용 */}
