@@ -1,29 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import './HomePage.css';
-import soccerImage from './soccer.png'; // 경로 수정
-import MenuPage from './MenuPage'; // MenuPage 컴포넌트 추가
+import soccerImage from './soccer.png';
+import MenuPage from './MenuPage';
 
 const HomePage = () => {
-  const [users, setUsers] = useState([]);
-  const [showMenu, setShowMenu] = useState(false); // 메뉴 표시 상태 추가
-
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await axios.get('http://localhost:3000/api/user');
-        setUsers(response.data);
-      } catch (error) {
-        console.error('Error fetching users:', error);
-      }
-    };
-
-    fetchUsers();
-  }, []);
+  const [showMenu, setShowMenu] = useState(false);
 
   const handleMenuToggle = () => {
-    setShowMenu(!showMenu); // 메뉴 토글
+    setShowMenu(!showMenu);
   };
+
+  const logos = [
+    '/logos/디즈니.svg',
+    '/logos/유튜브.svg',
+    '/logos/구글.svg',
+    '/logos/넷플릭스.svg',
+  ];
 
   return (
     <div className="homepage">
@@ -35,16 +28,34 @@ const HomePage = () => {
           <a href="/login">로그인</a>
         </nav>
       </header>
+
       {showMenu ? (
-        <MenuPage onClose={handleMenuToggle} /> 
+        <MenuPage onClose={handleMenuToggle} />
       ) : (
         <div className="main-content">
-          <img src={soccerImage} alt="Soccer" className="main-image" /> {/* soccer.png 적용 */}
+          <img src={soccerImage} alt="Soccer" className="main-image" />
         </div>
       )}
+
+      {/* 브랜드 로고 슬라이더 */}
       <footer className="footer">
         <div className="brand-logos">
-          {/* 브랜드 로고 추가 */}
+          <motion.div
+            className="logo-track"
+            animate={{ x: ['100%', '-100%'] }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: 'loop',
+                duration: 10,
+                ease: 'linear',
+              },
+            }}
+          >
+            {logos.concat(logos).map((logo, index) => (
+              <img key={index} src={logo} alt={`logo-${index}`} className="logo" />
+            ))}
+          </motion.div>
         </div>
       </footer>
     </div>

@@ -1,0 +1,47 @@
+/* MenuPage.css */
+.menu-page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 왼쪽 정렬로 변경 */
+    justify-content: center;
+    height: 100vh; /* 전체 화면 높이 */
+    background-color: ivory; /* 배경색 */
+    position: fixed; /* 고정 위치 */
+    top: 0; /* 상단 */
+    left: 0; /* 왼쪽 */
+    right: 0; /* 오른쪽 */
+    bottom: 0; /* 하단 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+}
+  
+.close-button {
+    position: absolute; /* 절대 위치 */
+    top: 20px; /* 상단에서 20px */
+    left: 20px; /* 왼쪽에서 20px */
+    font-size: 20px;
+}
+  
+.kick-off {
+    font-size: 36px;
+    margin: 40px 0; /* 위쪽 여백 추가 */
+    color: #333;
+}
+  
+.menu-items {
+    list-style-type: none; /* 기본 리스트 스타일 제거 */
+    padding: 0; /* 패딩 제거 */
+    margin: 0; /* 기본 마진 제거 */
+    width: 100%; /* 전체 너비 사용 */
+}
+  
+.menu-items li {
+    font-size: 48px; /* 원하는 크기로 조정 */
+    margin: 20px 0; /* 항목 간격 조정 */
+    font-weight: bold; /* 글자 두껍게 */
+    text-align: left; /* 왼쪽 정렬 */
+    width: 100%; /* 리스트 항목이 전체 너비를 차지하도록 */
+}
+
+.menu-items {
+    margin-top: px; /* 위쪽 여백 추가 */
+}
