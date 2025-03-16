@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import './HomePage.css';
-import soccerImage from './soccer.png';
-import MenuPage from '../MenuPage/MenuPage';
+import '../Homepage/HomePage.css';
+import soccerImage from '../soccer.png';
+import MenuPage from '../MenuPage/MenuPage'; 
 
 const HomePage = () => {
   const [showMenu, setShowMenu] = useState(false);
