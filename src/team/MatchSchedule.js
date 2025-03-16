@@ -1,19 +1,26 @@
-import React from "react";
+// import React from "react";
+// import "./MatchSchedule.css";
 
-const MatchSchedule = ({ matches }) => {
-  return (
-    <div className="match-schedule">
-      <h3>경기 일정 및 결과</h3>
-      {matches.map((match, index) => (
-        <div key={index} className="match">
-          <p>{match.date}</p>
-          <p>{match.location}</p>
-          <p>{match.opponent}</p>
-          {match.result && <p>결과: {match.result}</p>}
-        </div>
-      ))}
-    </div>
-  );
-};
+// const MatchSchedule = ({ matches }) => {
+//   return (
+//     <div className="match-schedule">
+//       <h3>📅 경기 일정</h3>
+//       {matches.length > 0 ? (
+//         <ul>
+//           {matches.map((match, index) => (
+//             <li key={index}>
+//               <p>📅 날짜: {match.date}</p>
+//               <p>📍 장소: {match.location}</p>
+//               <p>⚽ 상대팀: {match.opponent}</p>
+//               <p>📊 결과: {match.result || "예정"}</p>
+//             </li>
+//           ))}
+//         </ul>
+//       ) : (
+//         <p>경기 일정이 없습니다.</p>
+//       )}
+//     </div>
+//   );
+// };
 
-export default MatchSchedule;
+// export default MatchSchedule;

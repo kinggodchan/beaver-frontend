@@ -1,17 +1,18 @@
 import React from "react";
+import "./TeamInfo.css"; // 스타일 파일 추가
 
 const TeamInfo = ({ team }) => {
   return (
     <div className="team-info">
-      <h2>{team.name}</h2>
-      <p>멤버 {team.members} | 실력 {team.skillLevel}</p>
-      <p>{team.description}</p>
-      <h4>팀 규칙</h4>
-      <ul>
-        {team.rules.map((rule, index) => (
-          <li key={index}>{rule}</li>
-        ))}
-      </ul>
+      <div className="team-logo">
+        <img src={team.team_logo} alt={`${team.team_name} 로고`} />
+      </div>
+      <div className="team-details">
+        <h3 className="team-name">{team.team_name}</h3>
+        <p><strong>Location:</strong> {team.location}</p>
+        <p><strong>Member Count:</strong> {team.member_count}</p>
+        <p><strong>Description:</strong> {team.description}</p>
+      </div>
     </div>
   );
 };

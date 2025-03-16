@@ -1,0 +1,57 @@
+
+.team-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 100px auto; /* Header 높이(70px) + 추가 여백 */
+  max-width: 600px;
+  position: relative;
+  z-index: 500;
+}
+
+  
+  .team-logo img {
+	width: 120px;
+	height: 120px;
+	border-radius: 8px;
+	object-fit: cover;
+	margin-right: 20px;
+	border: 3px solid #ddd;
+  }
+  
+  .team-details {
+	flex: 1;
+  }
+  
+  .team-details h2 {
+	font-size: 26px;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 10px;
+	text-align: left;
+  }
+  
+  .team-details p {
+	font-size: 16px;
+	margin: 5px 0;
+	color: #555;
+  }
+  
+  .team-details p strong {
+	color: #222;
+  }
+  /* TeamInfo.css */
+.team-name {
+	font-size: 24px;
+	font-weight: bold;
+	color: #333;
+	margin: 5px;
+	text-align: left;
+	display: block; /* 혹시 flex 내부에서 인식 안 되는 경우 */
+  }
+  
+  

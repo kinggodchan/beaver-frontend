@@ -1,32 +1,50 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom"; // URL 파라미터 사용
+import axios from "axios"; // axios import
 import TeamInfo from "./TeamInfo";
-import TeamMembers from "./TeamMembers";
-import MatchSchedule from "./MatchSchedule";
 import Header from "./Header";
 import "./TeamPage.css";
 
-const teamData = {
-  name: "초밥 FC",
-  members: 21,
-  skillLevel: "아마추어",
-  description: "안녕하십니까, 초밥FC팀입니다. 현재 21명으로 구성된 팀이 운영되고 있습니다. 더 원활한 팀 운영과 경기가 진행될 수 있도록 규칙을 정했습니다.",
-  rules: ["응", "어", "야"],
-  captain: "손흥민",
-  players: ["김동식", "김성찬", "이범찬"],
-  matches: [
-    { date: "2/22 14:00", location: "OO야외 풋살 경기장", opponent: "막두 FC", result: null },
-    { date: "2/15 14:00", location: "OO야외 풋살 경기장", opponent: "케이 FC", result: "승 3:2" },
-  ],
-};
+const API_BASE_URL = "http://localhost:3000/api/teams"; // 백엔드 API 주소
 
 const TeamPage = () => {
+  const { teamId } = useParams(); // URL에서 teamId 가져오기
+  const [teamData, setTeamData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchTeamData = async () => {
+      try {
+        // 팀 상세 정보 가져오기 (axios 사용)
+        const teamResponse = await axios.get(`${API_BASE_URL}/${teamId}/detail`);
+        const teamResult = teamResponse.data;
+
+        if (teamResult.success) {
+          setTeamData(teamResult.data);
+        }
+      } catch (error) {
+        console.error("Error fetching team data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTeamData();
+  }, [teamId]);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (!teamData) {
+    return <p>팀 정보를 불러오는 데 실패했습니다.</p>;
+  }
+
   return (
     <div>
       <Header />
       <div className="team-container">
         <TeamInfo team={teamData} />
-        <TeamMembers captain={teamData.captain} players={teamData.players} />
-        <MatchSchedule matches={teamData.matches} />
       </div>
     </div>
   );
