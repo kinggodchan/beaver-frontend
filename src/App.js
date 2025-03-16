@@ -1,11 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './Homepage/HomePage';
-import TeamPage from './team/TeamPage';
+import TeamPage from './TeamPage/TeamPage';
+import TeamListPage from './TeamListPage/TeamListPage';
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/team" element={<TeamListPage />} />
       <Route path="/team/:teamId" element={<TeamPage />} />
     </Routes>
   );
