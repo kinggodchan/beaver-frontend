@@ -7,7 +7,7 @@ const MenuPage = ({ onClose }) => {
     <div className="menu-page">
       <h1 className="close-button" onClick={onClose}>CLOSE+</h1>
       <ul className="menu-items">
-        <li>TEAM</li>
+        <li><a href="/team">TEAM</a></li>
         <li>BOARD</li>
         <li>CONTACT</li>
       </ul>

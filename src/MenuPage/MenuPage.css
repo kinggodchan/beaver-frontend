@@ -45,3 +45,14 @@
 .menu-items {
     margin-top: px; /* 위쪽 여백 추가 */
 }
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin:0 10px;
+}
+  
+a:hover {
+    color: #007BFF; /* 링크 호버 색상 */
+}
