@@ -1,26 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"; // URL 파라미터 사용
-import axios from "axios"; // axios import
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import TeamInfo from "./TeamInfo";
+import TeamMembers from "./TeamMembers"; // 멤버 컴포넌트 추가
 import Header from "./Header";
 import "./TeamPage.css";
 
-const API_BASE_URL = "http://localhost:3000/api/teams"; // 백엔드 API 주소
+const API_BASE_URL = "http://localhost:3000/api/teams";
 
 const TeamPage = () => {
-  const { teamId } = useParams(); // URL에서 teamId 가져오기
+  const { teamId } = useParams();
   const [teamData, setTeamData] = useState(null);
+  const [teamMembers, setTeamMembers] = useState([]); // 멤버 목록 상태 추가
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchTeamData = async () => {
       try {
-        // 팀 상세 정보 가져오기 (axios 사용)
+        // 팀 상세 정보 가져오기
         const teamResponse = await axios.get(`${API_BASE_URL}/${teamId}/detail`);
-        const teamResult = teamResponse.data;
+        if (teamResponse.data.success) {
+          setTeamData(teamResponse.data.data);
+        }
 
-        if (teamResult.success) {
-          setTeamData(teamResult.data);
+        // 팀 멤버 정보 가져오기
+        const membersResponse = await axios.get(`${API_BASE_URL}/${teamId}/members`);
+        if (membersResponse.data.success) {
+          setTeamMembers(membersResponse.data.data);
         }
       } catch (error) {
         console.error("Error fetching team data:", error);
@@ -45,6 +51,7 @@ const TeamPage = () => {
       <Header />
       <div className="team-container">
         <TeamInfo team={teamData} />
+        <TeamMembers members={teamMembers} /> {/* 팀 멤버 목록 표시 */}
       </div>
     </div>
   );
