@@ -4,12 +4,26 @@ import "./MenuPage.css";
 
 const MenuPage = ({ onClose }) => {
   const [isBoardOpen, setIsBoardOpen] = useState(false); // BOARD 메뉴 상태
+  const [isTeamOpen, setIsTeamOpen] = useState(false); // BOARD 메뉴 상태
 
   return (
     <div className="menu-page">
       <h1 className="close-button" onClick={onClose}>CLOSE+</h1>
       <ul className="menu-items">
-        <li><Link to="/team">TEAM</Link></li>
+        <li
+          onMouseEnter={() => setIsTeamOpen(true)}
+          onMouseLeave={() => setIsTeamOpen(false)}
+        >
+          TEAM
+          {isTeamOpen && (
+            <ul className="submenu">
+              <li><Link to="/team">팀 리스트</Link></li>
+              <li><Link to="/team/match">팀 추천</Link></li>
+              <li><Link to="/team/ranking">팀 랭킹</Link></li>
+              <li><Link to="/match">풋살 매치</Link></li>
+            </ul>
+          )}
+        </li>
 
         {/* BOARD에 마우스를 올리면 서브메뉴 열기 */}
         <li 
