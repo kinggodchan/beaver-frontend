@@ -1,45 +1,56 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
 import "./MenuPage.css";
 
 const MenuPage = ({ onClose }) => {
-  const [isBoardOpen, setIsBoardOpen] = useState(false); // BOARD 메뉴 상태
-  const [isTeamOpen, setIsTeamOpen] = useState(false); // BOARD 메뉴 상태
+  const [activeMenu, setActiveMenu] = useState(null);
+
+  // nodeRef 추가 (각 서브메뉴에 대해 Ref를 생성)
+  const teamMenuRef = useRef(null);
+  const boardMenuRef = useRef(null);
 
   return (
     <div className="menu-page">
       <h1 className="close-button" onClick={onClose}>CLOSE+</h1>
       <ul className="menu-items">
-        <li
-          onMouseEnter={() => setIsTeamOpen(true)}
-          onMouseLeave={() => setIsTeamOpen(false)}
-        >
+        {/* TEAM 메뉴 */}
+        <li onMouseEnter={() => setActiveMenu("team")} onMouseLeave={() => setActiveMenu(null)}>
           TEAM
-          {isTeamOpen && (
-            <ul className="submenu">
+          <CSSTransition
+            in={activeMenu === "team"}
+            timeout={300}
+            classNames="fade"
+            unmountOnExit
+            nodeRef={teamMenuRef}  // Ref 추가
+          >
+            <ul className="submenu" ref={teamMenuRef}>
               <li><Link to="/team">팀 리스트</Link></li>
               <li><Link to="/team/match">팀 추천</Link></li>
               <li><Link to="/team/ranking">팀 랭킹</Link></li>
               <li><Link to="/match">풋살 매치</Link></li>
             </ul>
-          )}
+          </CSSTransition>
         </li>
 
-        {/* BOARD에 마우스를 올리면 서브메뉴 열기 */}
-        <li 
-          onMouseEnter={() => setIsBoardOpen(true)}
-          onMouseLeave={() => setIsBoardOpen(false)}
-        >
+        {/* BOARD 메뉴 */}
+        <li onMouseEnter={() => setActiveMenu("board")} onMouseLeave={() => setActiveMenu(null)}>
           BOARD
-          {isBoardOpen && (
-            <ul className="submenu">
+          <CSSTransition
+            in={activeMenu === "board"}
+            timeout={300}
+            classNames="fade"
+            unmountOnExit
+            nodeRef={boardMenuRef}  // Ref 추가
+          >
+            <ul className="submenu" ref={boardMenuRef}>
               <li><Link to="/board/information">정보 게시판</Link></li>
-              <li><Link to="/board/trade">거래 게시판</Link></li>
+              <li><Link to="/board/trade">장터 게시판</Link></li>
             </ul>
-          )}
+          </CSSTransition>
         </li>
 
-        <li><Link to="/contact">CONTACT</Link></li>
+        <li class="contact"><Link to="/contact">CONTACT</Link></li>
       </ul>
     </div>
   );
