@@ -1,21 +1,14 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";  // ✅ Link와 useNavigate 추가
+import { useNavigate } from "react-router-dom";  // ✅ Link와 useNavigate 추가
 import "./ContactPage.css";
+import Header from "../component/Header";
 
 const ContactPage = () => {
   const navigate = useNavigate(); // ✅ 페이지 이동을 위한 useNavigate 사용
 
   return (
     <div className="contact-container">
-      {/* ✅ 헤더 */}
-      <header className="contact-header">
-        <h1><Link to="/menu">MENU+</Link></h1>
-        <h2 className="kick-off">KICK OFF</h2>
-        <nav>
-          <Link to="/signup">회원가입</Link>
-          <Link to="/login">로그인</Link>
-        </nav>
-      </header>
+      <Header />
 
       <div className="contact-content">
         {/* ✅ 이미지 (public 폴더 접근) */}
