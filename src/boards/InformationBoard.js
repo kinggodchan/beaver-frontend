@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Header from '../component/Header';
 
 const InformationBoard = () => {
   const [posts, setPosts] = useState([]);
@@ -17,6 +18,7 @@ const InformationBoard = () => {
 
   return (
     <div>
+      <Header/>
       <h1>정보 게시판</h1>
       <div className="post-list">
         {posts.map(post => (

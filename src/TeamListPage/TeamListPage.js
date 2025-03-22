@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import TeamList from "./TeamList";
 import Pagination from "./Pagination";
+import Header from "../component/Header";
 import "./TeamListPage.css";
 
 const API_BASE_URL = "http://localhost:3000/api/teams";
@@ -41,14 +42,15 @@ const TeamListPage = () => {
 
   return (
     <div className="team-list-page">
-      <header className="search-container">
+      <Header />
+      <div className="search-container">
         <input
           type="text"
           placeholder="팀명 검색"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
-      </header>
+      </div>
 
       {loading ? <p>Loading...</p> : <TeamList teams={currentTeams} />}
 

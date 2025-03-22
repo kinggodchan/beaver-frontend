@@ -1,16 +1,14 @@
 .team-list-page {
-	padding: 20px;
-	text-align: center;
-  }
-  
-  .search-container {
-	margin-bottom: 20px;
-  }
-  
-  .search-container input {
-	width: 300px;
-	padding: 10px;
-	border: 1px solid #ccc;
-	border-radius: 8px;
-  }
-  
+  text-align: center;
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
