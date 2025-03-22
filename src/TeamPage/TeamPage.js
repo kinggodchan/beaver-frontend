@@ -55,7 +55,7 @@ const TeamPage = () => {
       <Header />
       <div className="team-container">
         <TeamInfo team={teamData} />
-        <TeamMembers members={teamMembers} /> {/* 팀 멤버 목록 표시 */}
+        <TeamMembers team={teamData} members={teamMembers} /> {/* 팀 멤버 목록 표시 */}
       </div>
     </div>
   );
