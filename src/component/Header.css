@@ -1,0 +1,56 @@
+/* Header.css */
+/* .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 99%;
+  background: #fff;
+  padding: 15px 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* 다른 요소 위에 배치 */
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* 상단 정렬 */
+  padding: 20px 10px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed; /* 상단 고정 */
+  top: 0; /* 상단에 위치 */
+  width: 100%; /* 전체 너비 */
+  z-index: 1000; /* 다른 요소 위에 표시 */
+}
+
+.kick-off {
+  margin: 0 20px; /* 다른 요소와의 간격 조정 */
+  font-size: 20px; /* 원하는 크기로 조정 */
+  color: green; /* 텍스트 색상 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 4px green;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header nav {
+  margin-left: 0; /* 왼쪽 여백 제거 */
+  padding-left: 20px; /* 왼쪽 패딩 추가 */
+}
+
+.header nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.header nav a:hover {
+  color: #007bff; /* 링크 호버 색상 */
+}

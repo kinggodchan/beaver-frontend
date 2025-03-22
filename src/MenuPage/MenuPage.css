@@ -1,77 +1,107 @@
 .menu-page {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* 왼쪽 정렬 */
-    justify-content: center;
-    height: 100vh; /* 전체 화면 높이 */
-    background-color: ivory; /* 배경색 */
-    position: fixed; /* 고정 위치 */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1000; /* 다른 요소 위에 표시 */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 왼쪽 정렬 */
+  justify-content: center;
+  height: 100vh;
+  background-color: ivory;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
 }
-  
+
 .close-button {
-    position: absolute; /* 절대 위치 */
-    top: 20px; /* 상단에서 20px */
-    left: 20px; /* 왼쪽에서 20px */
-    font-size: 20px;
-    cursor: pointer; /* 클릭 가능하도록 설정 */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .kick-off {
-    font-size: 36px;
-    margin: 40px 0; /* 위쪽 여백 추가 */
-    color: #333;
+  font-size: 36px;
+  margin: 40px 0;
+  color: #333;
 }
-  
+
 .menu-items {
-    list-style-type: none; /* 기본 리스트 스타일 제거 */
-    padding: 0;
-    margin: 0;
-    width: 100%;
+  list-style-type: none;
+  padding: 50px;
+  margin: 0;
+  width: 100%;
 }
-  
+
 .menu-items li {
-    font-size: 48px; /* 원하는 크기로 조정 */
-    margin: 20px 0;
-    font-weight: bold;
-    text-align: left;
-    width: 100%;
-    cursor: pointer; /* 마우스 올렸을 때 클릭 가능한 것처럼 보이게 */
+  position: relative; /* 기준점을 설정하여 서브메뉴 위치를 조정할 수 있게 함 */
+  font-size: 48px;
+  font-weight: bold;
+  padding: 60px 20px;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
 }
 
-/* BOARD 메뉴 클릭 시 나타나는 서브메뉴 스타일 */
+/* 서브메뉴 스타일 */
 .submenu {
-    list-style: none;
-    padding-left: 20px; /* 들여쓰기 */
-    margin-top: 10px;
+  position: absolute;
+  top: 50%;
+  left: 240px; /* 부모 요소의 오른쪽에 배치 */
+  transform: translateY(-50%); /* 중앙 정렬 */
+  padding: 15px;
+  list-style: none;
+  min-width: 180px;
+  z-index: 999;
 }
 
+/* 서브메뉴 항목 스타일 */
 .submenu li {
-    font-size: 36px; /* 서브메뉴 크기 조정 */
-    font-weight: normal; /* 일반 텍스트 스타일 */
-    padding: 5px 0;
+  font-size: 36px;
+  font-weight: bold;
+  padding: 8px 0;
 }
 
 .submenu li a {
-    color: #333;
-    text-decoration: none;
+  color: #333;
+  text-decoration: none;
 }
 
 .submenu li a:hover {
-    color: #007BFF; /* 링크 호버 색상 */
+  color: #007bff;
 }
 
-a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    margin: 0 10px;
+.contact a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  margin: 0;
 }
-  
-a:hover {
-    color: #007BFF; /* 링크 호버 색상 */
+
+.contact a:hover {
+  color: #007bff;
+}
+
+/* 애니메이션 효과 */
+.fade-enter {
+  opacity: 0;
+  transform: translateX(-10px) translateY(-50%);
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transform: translateX(0) translateY(-50%);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translateX(0) translateY(-50%);
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transform: translateX(-10px) translateY(-50%);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
 }

@@ -11,7 +11,6 @@ const TeamMembers = ({ members }) => {
         <ul>
           {members.map((member) => (
             <li key={member.user_id} className="member-card">
-              <img src={member.profile_image} alt={member.name} className="member-avatar" />
               <div className="member-info">
                 <h3>{member.username}</h3>
                 <p>{member.position}</p>
