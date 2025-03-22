@@ -1,14 +1,18 @@
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import TeamCard from "./TeamCard";
-import "./TeamList.css"; // 스타일 추가
 
 const TeamList = ({ teams }) => {
   return (
-    <div className="team-list">
-      {teams.map((team) => (
-        <TeamCard key={team.team_id} team={team} />
-      ))}
-    </div>
+    <Container className="my-4">
+      <Row>
+        {teams.map((team) => (
+          <Col key={team.team_id} xs={12} sm={6} md={4} lg={3}>
+            <TeamCard team={team} />
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 };
 

@@ -1,20 +1,29 @@
 import React from "react";
+import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import "./TeamCard.css";
 
 const TeamCard = ({ team }) => {
-  const navigate = useNavigate(); // 네비게이션 함수
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/team/${team.team_id}`); // 해당 팀의 상세 페이지로 이동
+    navigate(`/team/${team.team_id}`);
   };
 
   return (
-    <div className="team-card" onClick={handleClick}>
-      <img src={team.team_logo} alt={team.team_name} className="team-logo" />
-      <h3>{team.team_name}</h3>
-      <p>{team.location} | 멤버 {team.member_count}</p>
-    </div>
+    <Card className="mb-4 shadow-sm team-card" style={{ cursor: "pointer" }} onClick={handleClick}>
+      <Card.Img
+        variant="top"
+        src={team.team_logo}
+        alt={team.team_name}
+        style={{ height: "180px", objectFit: "contain" }}
+      />
+      <Card.Body>
+        <Card.Title>{team.team_name}</Card.Title>
+        <Card.Text>
+          {team.location} | 멤버 {team.member_count}
+        </Card.Text>
+      </Card.Body>
+    </Card>
   );
 };
 

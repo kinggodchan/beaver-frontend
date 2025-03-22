@@ -1,30 +1,34 @@
 import React from "react";
-//import "./Pagination.css";
+import { Pagination } from "react-bootstrap";
 
-const Pagination = ({ totalTeams, teamsPerPage, currentPage, setCurrentPage }) => {
+const TeamPagination = ({ totalTeams, teamsPerPage, currentPage, setCurrentPage }) => {
   const totalPages = Math.ceil(totalTeams / teamsPerPage);
 
+  if (totalPages <= 1) return null;
+
+  const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
+
   return (
-    <div className="pagination">
-      <button disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>
-        Previous
-      </button>
-
-      {Array.from({ length: totalPages }, (_, index) => (
-        <button
-          key={index + 1}
-          className={currentPage === index + 1 ? "active" : ""}
-          onClick={() => setCurrentPage(index + 1)}
+    <Pagination className="justify-content-center my-4">
+      <Pagination.Prev
+        onClick={() => setCurrentPage(currentPage - 1)}
+        disabled={currentPage === 1}
+      />
+      {pages.map((page) => (
+        <Pagination.Item
+          key={page}
+          active={page === currentPage}
+          onClick={() => setCurrentPage(page)}
         >
-          {index + 1}
-        </button>
+          {page}
+        </Pagination.Item>
       ))}
-
-      <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)}>
-        Next
-      </button>
-    </div>
+      <Pagination.Next
+        onClick={() => setCurrentPage(currentPage + 1)}
+        disabled={currentPage === totalPages}
+      />
+    </Pagination>
   );
 };
 
-export default Pagination;
+export default TeamPagination;
