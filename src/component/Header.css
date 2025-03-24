@@ -9,48 +9,79 @@
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000; /* 다른 요소 위에 배치 */
 
-
+/* 기본적인 헤더 스타일 */
+/* 기본적인 헤더 스타일 */
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start; /* 상단 정렬 */
-  padding: 20px 10px;
+  align-items: center;
+  justify-content: space-between; /* 좌우 정렬 */
+  height: 60px;  /* 고정된 높이 */
+  padding: 0 20px;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: fixed; /* 상단 고정 */
-  top: 0; /* 상단에 위치 */
-  width: 100%; /* 전체 너비 */
-  z-index: 1000; /* 다른 요소 위에 표시 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
-.kick-off {
-  margin: 0 20px; /* 다른 요소와의 간격 조정 */
-  font-size: 20px; /* 원하는 크기로 조정 */
-  color: green; /* 텍스트 색상 */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-shadow: 2px 2px 4px green;
+/* 헤더 내부 컨테이너 */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 양쪽 정렬 */
+  width: 100%;
+  max-width: 1200px; /* 중앙 정렬을 위한 최대 너비 */
+  margin: 0 auto; /* 중앙 정렬 */
+  position: relative; /* KICK OFF의 절대 위치 기준 */
 }
 
+/* 좌측 메뉴 */
 .header h1 {
   margin: 0;
   font-size: 24px;
+  cursor: pointer;
 }
 
+/* 중앙 메뉴 (KICK OFF) */
+.kick-off {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.kick-off a {
+  color: green;
+  text-shadow: 2px 2px 4px green;
+  text-decoration: none;
+}
+
+/* 우측 네비게이션 */
 .header nav {
-  margin-left: 0; /* 왼쪽 여백 제거 */
-  padding-left: 20px; /* 왼쪽 패딩 추가 */
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .header nav a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
-  margin: 0 10px;
 }
 
 .header nav a:hover {
-  color: #007bff; /* 링크 호버 색상 */
+  color: #007bff;
 }
+
+/* 전체 페이지의 기본 스타일 (스크롤 오류 방지) */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+

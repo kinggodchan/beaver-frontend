@@ -8,7 +8,7 @@ const ContactPage = () => {
 
   return (
     <div className="contact-container">
-      <Header />
+      <Header /> {/* ✅ 헤더 컴포넌트 추가 */}
 
       <div className="contact-content">
         {/* ✅ 이미지 (public 폴더 접근) */}
