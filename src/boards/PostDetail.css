@@ -1,55 +1,43 @@
+/* 전체 페이지 여백 추가 */
 .post-detail {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .post-image {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  .post-content {
-    font-size: 16px;
-    line-height: 1.6;
-  }
-  
-  .comments-section {
-    margin-top: 30px;
-  }
-  
-  .comments-section h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .comments-section ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .comments-section li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .comments-section strong {
-    display: block;
-    font-size: 14px;
-  }
-  
-  .comments-section p {
-    font-size: 14px;
-    margin: 5px 0 0;
-  }
-  
+  margin-top: 100px; /* 헤더 높이만큼 본문을 내림 */
+  padding: 20px;
+}
+
+
+/* 헤더와 본문 사이 간격 */
+.post-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 50px; /* 헤더 아래 여백 */
+}
+
+/* 게시글 이미지 스타일 */
+.post-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* 댓글 스타일 */
+.comments-section {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.comment {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.comment-user {
+  font-weight: bold;
+  color: #333;
+}
+
+.comment-text {
+  margin-top: 5px;
+}

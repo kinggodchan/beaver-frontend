@@ -77,11 +77,11 @@ const PostBoard = () => {
         <div className="info-grid">
           {currentPosts.map((post) => (
             <div
-              key={post.id}
-              className="info-card"
-              onClick={() => navigate(`/board/PostBoard/${post.id}`)}
-              style={{ cursor: "pointer" }}
-            >
+  key={post.id}
+  className="info-card"
+  onClick={() => navigate(`/board/information/${post.post_id}`)}
+  style={{ cursor: "pointer" }}
+>
               <img src={post.image} alt={post.title} className="info-image" />
               <div className="info-info">
                 <p className="info-category">{post.category}</p>

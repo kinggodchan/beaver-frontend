@@ -1,24 +1,23 @@
-/* 🔹 게시판 전체 레이아웃 */
+/* 🔹 게시판 전체 레이아웃 수정 */
 .info-board {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 100px auto 0; /* 네비게이션 바와 여백 조정 */
   padding: 20px;
-  margin-top: 80px; 
 }
 
-/* 🔹 컨테이너 (정렬 및 게시판) */
+/* 🔹 컨테이너 정렬 */
 .container {
   display: flex;
   gap: 20px;
-  align-items: flex-start; 
+  align-items: flex-start;
 }
 
-/* 🔹 사이드바 */
+/* 🔹 사이드바 스타일 유지 */
 .sidebar {
   width: 200px;
 }
 
-/* 🔹 게시글 가로 배치 */
+/* 🔹 게시글 가로 정렬 */
 .info-grid {
   display: flex;
   flex-wrap: wrap;
@@ -26,7 +25,7 @@
   flex-grow: 1;
 }
 
-/* 🔹 카드 디자인 */
+
 .info-card {
   width: calc(33.333% - 16px);
   background: white;
@@ -82,4 +81,3 @@
   background-color: #ccc;
   cursor: not-allowed;
 }
-
