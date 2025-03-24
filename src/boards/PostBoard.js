@@ -45,8 +45,9 @@ const PostBoard = () => {
   };
 
   return (
-    <div className="info-board">
+    <>
       <Header />
+    <div className="info-board">
       <div className="container">
         <div className="sidebar">
           <h3>정렬</h3>
@@ -119,6 +120,7 @@ const PostBoard = () => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 
