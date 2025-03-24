@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import TeamList from "./TeamList";
-import Pagination from "./Pagination";
+import TeamPagination from "./Pagination";
 import Header from "../component/Header";
-import "./TeamListPage.css";
+import { Button, Container, Form, Row, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const API_BASE_URL = "http://localhost:3000/api/teams";
+
 
 const TeamListPage = () => {
   const [teams, setTeams] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const teamsPerPage = 8; // 한 페이지당 팀 개수
-
+  const teamsPerPage = 8;
+  
   useEffect(() => {
     const fetchTeams = async () => {
       try {
@@ -29,39 +31,56 @@ const TeamListPage = () => {
     };
     fetchTeams();
   }, []);
-
-  // 검색 필터 적용
+  
   const filteredTeams = teams.filter((team) =>
     team.team_name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+);
 
-  // 페이지네이션 처리
-  const indexOfLastTeam = currentPage * teamsPerPage;
-  const indexOfFirstTeam = indexOfLastTeam - teamsPerPage;
-  const currentTeams = filteredTeams.slice(indexOfFirstTeam, indexOfLastTeam);
+const indexOfLastTeam = currentPage * teamsPerPage;
+const indexOfFirstTeam = indexOfLastTeam - teamsPerPage;
+const currentTeams = filteredTeams.slice(indexOfFirstTeam, indexOfLastTeam);
 
-  return (
-    <div className="team-list-page">
-      <Header />
-      <div className="search-container">
-        <input
-          type="text"
-          placeholder="팀명 검색"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-      </div>
+const navigate = useNavigate();
 
-      {loading ? <p>Loading...</p> : <TeamList teams={currentTeams} />}
+return (
+  <div>
+    <Header />
+    <Container className="my-4">
+      <Row className="align-items-center justify-content-between">
+        {/* 왼쪽 버튼 */}
+        <Col xs="auto">
+          <Button variant="primary" onClick={() => navigate("/team/create")}>
+            팀 생성
+          </Button>
+        </Col>
 
-      <Pagination
-        totalTeams={filteredTeams.length}
-        teamsPerPage={teamsPerPage}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
-    </div>
-  );
+        {/* 오른쪽 검색창 */}
+        <Col xs="auto" className="text-end">
+          <Form.Control
+            type="text"
+            placeholder="팀명 검색"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            style={{ width: "300px" }} // 너비 조절
+          />
+        </Col>
+      </Row>
+    </Container>
+
+    {loading ? (
+      <p className="text-center mt-5">Loading...</p>
+    ) : (
+      <TeamList teams={currentTeams} />
+    )}
+
+    <TeamPagination
+      totalTeams={filteredTeams.length}
+      teamsPerPage={teamsPerPage}
+      currentPage={currentPage}
+      setCurrentPage={setCurrentPage}
+    />
+  </div>
+);
 };
 
 export default TeamListPage;

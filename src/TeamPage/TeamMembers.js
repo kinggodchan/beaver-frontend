@@ -1,25 +1,35 @@
 import React from "react";
-import "./TeamMembers.css";
+import { Card, ListGroup } from "react-bootstrap";
 
-const TeamMembers = ({ members }) => {
+const TeamMembers = ({ team, members }) => {
   return (
-    <div className="team-members">
-      <h3>팀 멤버</h3>
-      {members.length === 0 ? (
-        <p>아직 멤버가 없습니다.</p>
-      ) : (
-        <ul>
-          {members.map((member) => (
-            <li key={member.user_id} className="member-card">
-              <div className="member-info">
-                <h3>{member.username}</h3>
-                <p>{member.position}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+    <Card className="mb-4">
+      <Card.Header as="h5">👑 팀 주장</Card.Header>
+      <ListGroup variant="flush">
+        <ListGroup.Item>
+          {team.captain ? (
+            <div>
+              <strong>{team.captain.username}</strong>
+            </div>
+          ) : (
+            <div>주장이 없습니다.</div>
+          )}
+        </ListGroup.Item>
+      </ListGroup>
+
+      <Card.Header as="h5">👥 팀 멤버</Card.Header>
+      <ListGroup variant="flush">
+        {members.length === 0 ? (
+          <ListGroup.Item>아직 멤버가 없습니다.</ListGroup.Item>
+        ) : (
+          members.map((member) => (
+            <ListGroup.Item key={member.user_id}>
+              <strong>{member.username}</strong> {member.position && `| ${member.position}`}
+            </ListGroup.Item>
+          ))
+        )}
+      </ListGroup>
+    </Card>
   );
 };
 
