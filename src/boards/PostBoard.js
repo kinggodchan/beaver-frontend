@@ -48,7 +48,7 @@ const PostBoard = () => {
     <>
       <Header />
     <div className="info-board">
-      <div className="container">
+      <div className="post-board-container">
         <div className="sidebar">
           <h3>정렬</h3>
           <div className="sort-options">

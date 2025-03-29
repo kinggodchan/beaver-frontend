@@ -6,7 +6,7 @@
 }
 
 /* 🔹 컨테이너 정렬 */
-.container {
+.post-board-container {
   display: flex;
   gap: 20px;
   align-items: flex-start;
