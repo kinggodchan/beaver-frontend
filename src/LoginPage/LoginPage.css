@@ -1,0 +1,36 @@
+.login-container {  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    min-height: 80vh; /* 페이지 중앙 정렬을 위해 설정 */  
+  }  
+  
+  .login-card {  
+    width: 100%;  
+    max-width: 600px; /* 카드의 최대 너비를 설정 */  
+    padding: 20px;    /* 카드 내부 여백 */  
+    border-radius: 10px; /* 카드 모서리 둥글게 */  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */  
+  }  
+  
+  .login-title {  
+    font-weight: bold;  
+    color: #000;  
+    text-align: center; /* 제목 중앙 정렬 */  
+    margin-bottom: 20px; /* 제목 아래 여백 */  
+  }  
+  
+  .login-links {  
+    margin-top: 15px; /* 링크와 카드 내용의 격차 */  
+    text-align: center; /* 링크 중앙 정렬 */  
+    font-size: 14px;   /* 링크 폰트 크기 설정 */  
+  }  
+  
+  .login-links a {  
+    text-decoration: none; /* 링크에 밑줄 없애기 */  
+    color: #007bff; /* 링크 색상 */  
+  }  
+  
+  .login-links a:hover {  
+    text-decoration: underline; /* 호버 시 밑줄 추가 */  
+  }

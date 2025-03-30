@@ -3,6 +3,7 @@ import { Form, Button, Container, Card, Alert } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import Header from "../component/Header";
+import "./LoginPage.css";
 
 const API_URL = "http://localhost:3000/api/auth/signin";
 
@@ -30,48 +31,54 @@ const LoginPage = () => {
     }
   };
 
-  return (
-    <>
-      <Header />
-      <Container className="my-5" style={{ maxWidth: "500px" }}>
-        <Card>
-          <Card.Body>
-            <h3 className="mb-4">🔐 로그인</h3>
+  return (  
+    <>  
+      <Header />  
+      <Container className="login-container">  
+        <Card className="login-card">  
+          <Card.Body>  
+            <h3 className="login-title">🔐 로그인</h3>  
 
-            {error && <Alert variant="danger">{error}</Alert>}
+            {error && <Alert variant="danger">{error}</Alert>}  
 
-            <Form onSubmit={handleLogin}>
-              <Form.Group className="mb-3">
-                <Form.Label>이메일</Form.Label>
-                <Form.Control
-                  type="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder="email@example.com"
-                  required
-                />
-              </Form.Group>
+            <Form onSubmit={handleLogin}>  
+              <Form.Group className="mb-3">  
+                <Form.Label>이메일</Form.Label>  
+                <Form.Control  
+                  type="email"  
+                  name="email"  
+                  value={form.email}  
+                  onChange={handleChange}  
+                  placeholder="email@example.com"  
+                  required  
+                />  
+              </Form.Group>  
 
-              <Form.Group className="mb-3">
-                <Form.Label>비밀번호</Form.Label>
-                <Form.Control
-                  type="password"
-                  name="password"
-                  value={form.password}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
+              <Form.Group className="mb-4">  
+                <Form.Label>비밀번호</Form.Label>  
+                <Form.Control  
+                  type="password"  
+                  name="password"  
+                  value={form.password}  
+                  onChange={handleChange}  
+                  required  
+                />  
+              </Form.Group>  
 
-              <Button type="submit" variant="primary" className="w-100">
-                로그인
-              </Button>
-            </Form>
-          </Card.Body>
-        </Card>
-      </Container>
-    </>
+              <Button type="submit" variant="dark" className="w-100">  
+                로그인  
+              </Button>  
+            </Form>  
+
+            <div className="login-links">  
+              <a href="/forgot-password">아이디 찾기</a> |   
+              <a href="/reset-password"> 비밀번호 찾기</a> |   
+              <a href="/signup"> 회원가입</a>  
+            </div>  
+          </Card.Body>  
+        </Card>  
+      </Container>  
+    </> 
   );
 };
 

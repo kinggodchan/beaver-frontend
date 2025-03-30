@@ -10,6 +10,7 @@ import TeamListPage from './TeamListPage/TeamListPage';
 import ContactPage from "./contact/ContactPage"; // ✅ ContactPage 경로 변경
 import LoginPage from "./LoginPage/LoginPage";
 import PostDetail from "./boards/PostDetail";  // ✅ 추가
+import Signup from "./Signup/Signup";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="/board/trade" element={<TradeBoard />} /> {/* 거래 게시판 */}
       <Route path="/login" element={<LoginPage />} /> 
       <Route path="/contact" element={<ContactPage />} /> {/* ✅ 중복 제거된 ContactPage */}
+      <Route path="/signup" element={<Signup/>} />
     </Routes>
   );
 }

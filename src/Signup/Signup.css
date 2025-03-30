@@ -1,0 +1,38 @@
+.signup-container {  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  min-height: 100vh; /* 중앙 정렬을 위한 최소 높이 */   
+}  
+
+.signup-card {  
+  width: 100%;  
+  max-width: 500px; /* 카드의 최대 너비 설정 */  
+  padding: 30px;    /* 카드 내부 여백 */  
+  border-radius: 15px; /* 카드 모서리 둥글게 */  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* 부드러운 그림자 효과 */  
+  background-color: white; /* 카드 배경을 흰색으로 설정 */  
+}  
+
+.signup-title {  
+  font-weight: bold;   
+  text-align: center; /* 제목 중앙 정렬 */  
+  margin-bottom: 20px; /* 제목 아래 여백 */  
+  font-size: 24px; /* 제목 폰트 크기 설정 */  
+  color: #333; /* 제목 글자 색상 */  
+}  
+
+.gender-selection {  
+  display: flex;   
+  justify-content: space-between; /* 버튼 간의 간격균형 */  
+  margin-bottom: 20px; /* 성별 선택 아래 여백 */  
+}  
+
+.gender-selection Button {  
+  flex: 1; /* 버튼이 균일하게 펼쳐지도록 설정 */  
+  margin-right: 10px; /* 오른쪽 버튼과 간격 추가 */  
+}  
+
+.gender-selection Button:last-child {  
+  margin-right: 0; /* 마지막 버튼의 오른쪽 간격 없애기 */  
+}
