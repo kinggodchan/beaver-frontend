@@ -23,12 +23,32 @@
     margin: auto;
   }
   
-  .post-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 카드 정렬 */
-    gap: 15px;
-  }
-  
+ /* 필터 + 거래 게시판을 가로 정렬 */
+.board-wrapper {
+  display: flex; /* 가로 배치 */
+  max-width: 1200px;
+  margin: auto;
+  gap: 20px;
+}
+
+/* 필터 스타일 */
+.filter-container {
+  width: 250px; /* 필터 영역 고정 */
+  padding: 20px;
+  border-radius: 10px;
+  background: #f8f9fa; /* 연한 배경 */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+
+/* 게시글 목록 */
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+ 
   .post-card {
     border-radius: 10px;
     overflow: hidden;
