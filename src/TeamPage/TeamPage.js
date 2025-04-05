@@ -49,7 +49,7 @@ const TeamPage = () => {
         setTeamMembers(membersResponse.data.data);
 
       const schedulesResponse = await axios.get(
-        `${API_BASE_URL}/team-schedule/${teamId}`
+        `${API_BASE_URL}/matches/${teamId}`
       );
       if (schedulesResponse.data.success)
         setTeamSchedules(schedulesResponse.data.data);
@@ -112,7 +112,7 @@ const TeamPage = () => {
 
         <Row className="my-4">
           <Col>
-            <MatchSchedule matches={teamSchedules} />
+            <MatchSchedule matches={teamSchedules} isCaptain={isCaptain}/>
           </Col>
         </Row>
 
