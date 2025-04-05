@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom"; // ✅ Link 추가
 import axios from "axios";
 import Header from "../component/Header";
-import "./PostBoard.css"; // 정보 게시판 스타일과 동일하게 사용
+import "./PostBoard.css"; // 동일한 스타일 사용
 
 const TradeBoard = () => {
   const [tradePosts, setTradePosts] = useState([]);
@@ -14,7 +14,6 @@ const TradeBoard = () => {
   const [maxPrice, setMaxPrice] = useState(2000000);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 6;
-  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -39,7 +38,7 @@ const TradeBoard = () => {
       );
     });
     setFilteredPosts(filtered);
-    setCurrentPage(1); // 필터 변경 시 페이지 초기화
+    setCurrentPage(1);
   }, [searchTerm, selectedCategory, selectedSize, minPrice, maxPrice, tradePosts]);
 
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
@@ -59,7 +58,7 @@ const TradeBoard = () => {
       <Header />
       <div className="info-board">
         <div className="post-board-container">
-          {/* 🔍 필터 영역 */}
+          {/* 필터 영역 */}
           <aside className="sidebar">
             <h3>필터</h3>
             <input
@@ -100,53 +99,37 @@ const TradeBoard = () => {
               value={maxPrice}
               onChange={(e) => setMaxPrice(Number(e.target.value))}
             />
-            <p>{minPrice.toLocaleString()}원 ~ {maxPrice.toLocaleString()}원</p>
+            <p>
+              {minPrice.toLocaleString()}원 ~ {maxPrice.toLocaleString()}원
+            </p>
           </aside>
 
-          {/* 📦 거래 게시글 목록 */}
+          {/* 거래 게시글 목록 */}
           <div className="info-grid">
-            {currentPosts.map((post) => (
-              <div
-                key={post.id}
-                className="info-card"
-                onClick={() => navigate(`/trade-post/${post.id}`)}
-                style={{ cursor: "pointer", position: "relative" }}
-              >
-                <img
-                  src={post.imageUrl}
-                  alt={post.title}
-                  className="info-image"
-                />
-                <div className="info-info">
-                  <p className="info-category">{post.category}</p>
-                  <h4 className="info-title">{post.title}</h4>
-                  <p>{post.price.toLocaleString()}원</p>
-                </div>
+          {currentPosts.map((post) => (
+  <Link
+    to={`/boards/trade-posts/${post.trade_post_id}`}  // ✅ 정확한 상세 페이지 경로
+    key={post.trade_post_id}
+    className="info-card"
+    style={{ position: "relative" }}
+  >
+    <img
+      src={post.imageUrl}
+      alt={post.title}
+      className="info-image"
+    />
+    <div className="info-info">
+      <p className="info-category">{post.category}</p>
+      <h4 className="info-title">{post.title}</h4>
+      <p>{Number(post.price).toLocaleString()}원</p>
+    </div>
+  </Link>
+))}
 
-                {/* 상태 뱃지 */}
-                {post.status && (
-                  <div
-                    className="info-badge"
-                    style={{
-                      position: "absolute",
-                      top: "10px",
-                      left: "10px",
-                      backgroundColor: post.status === "판매중" ? "#28a745" : "#6c757d",
-                      color: "white",
-                      padding: "4px 8px",
-                      fontSize: "12px",
-                      borderRadius: "4px",
-                    }}
-                  >
-                    {post.status}
-                  </div>
-                )}
-              </div>
-            ))}
           </div>
         </div>
 
-        {/* 📄 페이지네이션 */}
+        {/* 페이지네이션 */}
         <div className="pagination">
           <button
             onClick={() => handlePageChange(currentPage - 1)}
