@@ -13,6 +13,7 @@ import PostDetail from "./boards/PostDetail";  // ✅ 추가
 import Signup from "./Signup/Signup";
 import MatchListPage from "./MatchPage/MatchListPage";
 import MatchCreatePage from "./MatchCreatePage/MatchCreatePage";
+import MatchDetailPage from "./MatchDetailPage/MatchDetailPage";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
       <Route path="/signup" element={<Signup/>} />
       <Route path="/match" element={<MatchListPage />} />
       <Route path="/match/create" element={<MatchCreatePage />} />
+      <Route path="/match/:matchId" element={<MatchDetailPage />} />
     </Routes>
   );
 }

@@ -4,7 +4,6 @@ import { Container, Row, Col, Image, Spinner, Alert } from "react-bootstrap";
 import DateCarousel from "./DateCarousel";
 import MatchCard from "./MatchCard";
 import Header from "../component/Header";
-//import "./MatchListPage.css";
 
 const API_BASE_URL = "http://localhost:3000/api/matches";
 

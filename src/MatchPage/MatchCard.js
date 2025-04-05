@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Row, Col, Badge } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const MatchCard = ({ match }) => {
   const isWaiting = match.status === "WAITING";
@@ -7,13 +8,19 @@ const MatchCard = ({ match }) => {
   const statusText = isWaiting ? "신청 가능" : "마감";
   const statusVariant = isWaiting ? "primary" : "secondary";
 
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/match/${match.match_id}`);
+  };
+
   const time = new Date(match.match_date).toLocaleTimeString("ko-KR", {
     hour: "2-digit",
     minute: "2-digit",
   });
 
   return (
-    <Card className="mb-3 shadow-sm">
+    <Card className="mb-3 shadow-sm" onClick={handleClick} style={{ cursor: "pointer" }}>
       <Card.Body>
         <Row className="align-items-center">
           <Col xs={2} className="text-center">
