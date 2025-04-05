@@ -1,19 +1,46 @@
 import React from "react";
-import { Card, ListGroup } from "react-bootstrap";
+import { Card, ListGroup, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
-const MatchSchedule = ({ matches }) => {
+const MatchSchedule = ({ matches, isCaptain }) => {
+  const navigate = useNavigate();
+
   return (
     <Card className="mb-4">
-      <Card.Header as="h5">📅 경기 일정</Card.Header>
+      <Card.Header
+        as="h5"
+        className="d-flex justify-content-between align-items-center"
+      >
+        <span>📅 경기 일정</span>
+        
+        {/* ✅ 팀 주장만 경기 생성 버튼 표시 */}
+        {isCaptain && (
+          <Button
+            variant="primary"
+            onClick={() => navigate("/match/create")}
+          >
+            + 경기 생성
+          </Button>
+        )}
+      </Card.Header>
+
       <Card.Body>
         {matches.length > 0 ? (
           <ListGroup variant="flush">
             {matches.map((match, index) => (
               <ListGroup.Item key={index}>
-                <p><strong>⚽ 상대팀:</strong> {match.opponent || "모집중"}</p>
-                <p><strong>📅 날짜:</strong> {match.match_date}</p>
-                <p><strong>📍 장소:</strong> {match.location}</p>
-                <p><strong>📊 결과:</strong> {match.result || "예정"}</p>
+                <p>🏟 장소: {match.location}</p>
+                <p>🕒 시간: {new Date(match.match_date).toLocaleString()}</p>
+                <p>
+                  ⚽ 대진: {match.host_team_name} vs{" "}
+                  {match.opponent_team_name || "모집 중"}
+                </p>
+                <p>
+                  📊 결과:{" "}
+                  {match.result
+                    ? `${match.result.host_score} : ${match.result.opponent_score}`
+                    : "예정"}
+                </p>
               </ListGroup.Item>
             ))}
           </ListGroup>
