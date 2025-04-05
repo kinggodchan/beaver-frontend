@@ -31,13 +31,12 @@ const PostBoard = () => {
     return 0;
   });
 
-  // ✅ 페이지네이션 계산
   const totalPages = Math.ceil(sortedPosts.length / postsPerPage);
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
 
-  // ✅ 페이지 변경 함수
+
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
@@ -93,7 +92,6 @@ const PostBoard = () => {
         </div>
       </div>
 
-      {/* ✅ 개선된 페이지네이션 UI */}
       <div className="pagination">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
