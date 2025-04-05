@@ -11,6 +11,8 @@ import ContactPage from "./contact/ContactPage"; // ✅ ContactPage 경로 변�
 import LoginPage from "./LoginPage/LoginPage";
 import PostDetail from "./boards/PostDetail";  // ✅ 추가
 import Signup from "./Signup/Signup";
+import MatchListPage from "./MatchPage/MatchListPage";
+import MatchCreatePage from "./MatchCreatePage/MatchCreatePage";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
       <Route path="/login" element={<LoginPage />} /> 
       <Route path="/contact" element={<ContactPage />} /> {/* ✅ 중복 제거된 ContactPage */}
       <Route path="/signup" element={<Signup/>} />
+      <Route path="/match" element={<MatchListPage />} />
+      <Route path="/match/create" element={<MatchCreatePage />} />
     </Routes>
   );
 }
