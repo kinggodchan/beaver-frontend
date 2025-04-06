@@ -89,3 +89,9 @@
     background-color: #333;
   }
   
+  .submit-success {
+    margin-top: 15px;
+    color: green;
+    font-weight: bold;
+  }
+  
