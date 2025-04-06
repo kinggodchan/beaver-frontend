@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 const MatchSchedule = ({ matches, isCaptain }) => {
   const navigate = useNavigate();
 
+  const handleClick = (match) => {
+    navigate(`/match/${match.match_id}`);
+  };
   return (
     <Card className="mb-4">
       <Card.Header
@@ -28,7 +31,7 @@ const MatchSchedule = ({ matches, isCaptain }) => {
         {matches.length > 0 ? (
           <ListGroup variant="flush">
             {matches.map((match, index) => (
-              <ListGroup.Item key={index}>
+              <ListGroup.Item key={index} onClick={() => handleClick(match)} style={{ cursor: "pointer" }}>
                 <p>🏟 장소: {match.location}</p>
                 <p>🕒 시간: {new Date(match.match_date).toLocaleString()}</p>
                 <p>
