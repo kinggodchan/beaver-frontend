@@ -15,6 +15,8 @@ import MatchListPage from "./MatchPage/MatchListPage";
 import MatchCreatePage from "./MatchCreatePage/MatchCreatePage";
 import MatchDetailPage from "./MatchDetailPage/MatchDetailPage";
 import TradeDetail from "./boards/TradeDetail"; 
+import InquiryList from "./Inquiry/InquiryList";
+import InquiryDetail from "./Inquiry/InquiryDetail";
 
 function App() {
   return (
@@ -34,6 +36,8 @@ function App() {
       <Route path="/match" element={<MatchListPage />} />
       <Route path="/match/create" element={<MatchCreatePage />} />
       <Route path="/match/:matchId" element={<MatchDetailPage />} />
+      <Route path="/inquiry" element={<InquiryList />} />
+      <Route path="/inquiry/:id" element={<InquiryDetail />} />
     </Routes>
   );
 }
