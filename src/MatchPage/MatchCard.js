@@ -29,9 +29,9 @@ const MatchCard = ({ match }) => {
           <Col xs={7}>
             <div className="fw-bold">{match.location}</div>
             <div>
-              {match.host_team_name}
-              {match.opponent_team_name
-                ? ` vs ${match.opponent_team_name}`
+              {match.host_team.team_name}
+              {match.opponent_team
+                ? ` vs ${match.opponent_team.team_name}`
                 : ""}
             </div>
           </Col>
