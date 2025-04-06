@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "./PostDetail.css"; // 스타일 파일 추가
+import "./PostDetail.css";
 import Header from "../component/Header";
 
 const PostDetail = () => {
@@ -34,25 +34,30 @@ const PostDetail = () => {
   }
 
   return (
-    <div className="post-detail">
+    <div className="post-detail-container">
       <Header />
-      <div className="post-container">
-        <h1>{post.title}</h1>
-        <img src={post.image} alt={post.title} className="post-image" />
-        <p className="post-content">{post.content}</p>
 
-        <div className="comment-section">
+      <div className="post-wrapper">
+        <div className="post-content-box">
+          <h1>{post.title}</h1>
+          <img src={post.image} alt={post.title} className="post-image" />
+          <p className="post-content">{post.content}</p>
+        </div>
+
+        <div className="comment-box">
           <h3>댓글</h3>
           {comments.length > 0 ? (
             comments.map((comment) => (
               <div key={comment.comment_id} className="comment">
-                <p><strong>{comment.author}</strong></p>
+                <p className="comment-author">{comment.author}</p>
                 <p>{comment.text}</p>
-                <span>{new Date(comment.date).toLocaleDateString()}</span>
+                <span className="comment-date">
+                  {new Date(comment.date).toLocaleDateString()}
+                </span>
               </div>
             ))
           ) : (
-            <p>댓글이 없습니다.</p>
+            <p className="no-comment">댓글이 없습니다.</p>
           )}
         </div>
       </div>
