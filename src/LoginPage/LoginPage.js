@@ -23,8 +23,9 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const res = await axios.post(API_URL, form); // 간결하게 작성
-      const token = res.data.data.accessToken;
-      localStorage.setItem("accessToken", token);
+      const { accessToken, user } = res.data.data;  // 사용자 정보도 함께 받는다고 가정
+      localStorage.setItem("accessToken", accessToken);
+      localStorage.setItem("user", JSON.stringify(user));  // 사용자 정보 저장
       navigate(backTo); // 이전 페이지로 이동
     } catch (err) {
       setError("이메일 또는 비밀번호가 올바르지 않습니다.");
