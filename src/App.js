@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import MenuPage from "./MenuPage/MenuPage";
 import PostBoard from "./boards/PostBoard";
@@ -17,8 +17,19 @@ import MatchDetailPage from "./MatchDetailPage/MatchDetailPage";
 import TradeDetail from "./boards/TradeDetail"; 
 import InquiryList from "./Inquiry/InquiryList";
 import InquiryDetail from "./Inquiry/InquiryDetail";
+import MyPage from "./pages/mypage";
 
 function App() {
+  // 로그인 상태와 사용자 정보 선언
+  const [isLoggedIn, setIsLoggedIn] = useState(true); // 필요시 false로 변경
+  const [user, setUser] = useState({ name: "손흥민", level: "실력 프로" });
+
+  //  로그아웃 핸들러
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUser(null);
+  };
+
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
@@ -38,6 +49,7 @@ function App() {
       <Route path="/match/:matchId" element={<MatchDetailPage />} />
       <Route path="/inquiry" element={<InquiryList />} />
       <Route path="/inquiry/:id" element={<InquiryDetail />} />
+      <Route path="/mypage" element= {<MyPage isLoggedIn={isLoggedIn} user={user} onLogout={handleLogout}/>}/>
     </Routes>
   );
 }
