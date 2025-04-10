@@ -85,3 +85,35 @@ body, html {
   overflow-x: hidden;
 }
 
+.user-icon {
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.user-icon:hover {
+  transform: scale(1.1);
+}
+
+/* 중간 "KICK OFF" 텍스트 스타일 */
+.navbar-text a {
+  color: green;
+  text-shadow: 2px 2px 4px green;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-text a:hover {
+  color: darkgreen;
+}
+
+/* 반응형 대응을 위한 최소 설정 */
+@media (max-width: 768px) {
+  .navbar-text {
+    font-size: 18px;
+  }
+
+  .user-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
