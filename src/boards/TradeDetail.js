@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Header from "../component/Header";
 import "./TradeDetail.css";
 
 const TradeDetail = () => {
@@ -25,7 +24,6 @@ const TradeDetail = () => {
 
   return (
     <>
-      <Header />
       <div className="trade-detail-container">
         <div className="trade-detail-wrapper">
           <img src={post.file} alt={post.title} className="trade-img" />

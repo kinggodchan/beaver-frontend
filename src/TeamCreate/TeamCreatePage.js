@@ -8,7 +8,6 @@ import {
 } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Header from "../component/Header";
 
 const API_URL = "http://localhost:3000/api/teams";
 
@@ -77,7 +76,6 @@ const TeamCreatePage = () => {
 
   return (
     <>
-      <Header />
       <Container className="my-5" style={{ maxWidth: "600px" }}>
         <Card>
           <Card.Body>

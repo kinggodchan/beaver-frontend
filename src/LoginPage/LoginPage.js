@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Form, Button, Container, Card, Alert } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
-import Header from "../component/Header";
 import "./LoginPage.css";
 
 const API_URL = "http://localhost:3000/api/auth/signin";
@@ -33,8 +32,7 @@ const LoginPage = () => {
   };
 
   return (  
-    <>  
-      <Header />  
+    <>   
       <Container className="login-container">  
         <Card className="login-card">  
           <Card.Body>  

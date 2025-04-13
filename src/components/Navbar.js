@@ -35,8 +35,8 @@ const Navbar = () => {
                 게시판 <span className="caret"></span>
               </a>
               <ul className="dropdown-menu">
-                <li><a href="/information">정보 게시판</a></li>
-                <li><a href="/trade">장터 게시판</a></li>
+                <li><a href="/board/information">정보 게시판</a></li>
+                <li><a href="/board/trade">장터 게시판</a></li>
               </ul>
             </li>
             <li><a href="/contact">문의하기</a></li>

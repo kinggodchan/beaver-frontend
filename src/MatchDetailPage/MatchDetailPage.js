@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-import Header from "../component/Header";
 import {
   Card,
   Container,
@@ -99,7 +98,6 @@ const MatchDetailPage = () => {
 
   return (
     <>
-      <Header />
       <Container className="my-4">
         <h3>📋 경기 상세 정보</h3>
         <Card>

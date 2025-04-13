@@ -3,7 +3,6 @@ import axios from "axios";
 import { Container, Row, Col, Image, Spinner, Alert } from "react-bootstrap";
 import DateCarousel from "./DateCarousel";
 import MatchCard from "./MatchCard";
-import Header from "../component/Header";
 
 const API_BASE_URL = "http://localhost:3000/api/matches";
 
@@ -32,7 +31,6 @@ const MatchListPage = () => {
 
   return (
     <>
-      <Header />
       <Container className="my-4">
         <h2 className="mb-4">풋살 매치</h2>
         <Image src="/match.png" alt="풋살 배경" fluid className="w-100" style={{ maxHeight: "250px", objectFit: "cover", margin:"0px 0px 40px 0px" }} />

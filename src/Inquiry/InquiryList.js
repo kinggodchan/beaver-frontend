@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Header from "../component/Header";
 import "./Inquirylist.css";
 
 const InquiryList = () => {
@@ -16,7 +15,6 @@ const InquiryList = () => {
 
   return (
     <>
-      <Header />
       <div className="inquiry-container">
         <h2>문의 게시판</h2>
         <table className="inquiry-table">

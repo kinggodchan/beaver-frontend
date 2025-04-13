@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Container, Card, Form, Button, Alert } from "react-bootstrap";
-import Header from "../component/Header"; // Header 컴포넌트를 가져옵니다.
-import "./Signup.css"; // CSS 파일을 import합니다.
+import "./Signup.css";
 
 const Signup = () => {
   const [form, setForm] = useState({
@@ -36,7 +35,6 @@ const Signup = () => {
 
   return (
     <>
-      <Header />
       <Container className="signup-container">
         <Card className="signup-card">
           <Card.Body>
