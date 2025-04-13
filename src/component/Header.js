@@ -45,14 +45,6 @@ const Header = () => {
     </>
   ) : (
     // 로그인 후: 아이콘 클릭 시 마이페이지 이동
-    
-    // <Image
-    //   src="/icon.png"
-    //   alt="User Icon"
-    //   onClick={goToMyPage}
-    //   className="user-icon"
-    //   style={{ cursor: "pointer", width: "35px", height: "35px", marginRight: "10px" }}
-    // />
     <Nav.Link onClick={goToMyPage} style={{ cursor: "pointer" }}>
     <i className="bi bi-person-circle" style={{ fontSize: "1.8rem" }}></i>
     </Nav.Link>

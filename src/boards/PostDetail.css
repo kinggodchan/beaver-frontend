@@ -1,7 +1,7 @@
 /* 헤더와 본문 사이 간격 */
-.post-container {
-  max-width: 900px;
-  margin: 60px auto;
+.post-detail-container {
+  max-width: 1200px;
+  margin:60px auto;
   padding: 0 20px;
   font-family: sans-serif;
 }

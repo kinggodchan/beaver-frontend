@@ -1,5 +1,7 @@
 /* InquiryList.css */
 .inquiry-container {
+  max-width: 1200px;
+  margin: auto;
   padding: 40px;
   text-align: center;
 }
