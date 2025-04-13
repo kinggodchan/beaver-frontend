@@ -82,7 +82,7 @@ const PostBoard = () => {
   onClick={() => navigate(`/board/information/${post.post_id}`)}
   style={{ cursor: "pointer" }}
 >
-              <img src={post.image} alt={post.title} className="info-image" />
+              <img src={post.file} alt={post.title} className="info-image" />
               <div className="info-info">
                 <p className="info-category">{post.category}</p>
                 <h4 className="info-title">{post.title}</h4>

@@ -24,40 +24,42 @@ const TradeDetail = () => {
   if (!post) return <p>불러오는 중...</p>;
 
   return (
-    <div className="trade-detail-container">
+    <>
       <Header />
-      <div className="trade-detail-wrapper">
-        <img src={post.imageUrl} alt={post.title} className="trade-img" />
-        <div className="trade-info">
-          <div className="trade-header">
-            <h2>{post.title}</h2>
-            <span className="trade-status">{post.status}</span>
+      <div className="trade-detail-container">
+        <div className="trade-detail-wrapper">
+          <img src={post.file} alt={post.title} className="trade-img" />
+          <div className="trade-info">
+            <div className="trade-header">
+              <h2>{post.title}</h2>
+              <span className="trade-status">{post.status}</span>
+            </div>
+            <p className="trade-price">
+              {Number(post.price).toLocaleString()}원
+            </p>
+            <p className="trade-description">{post.description}</p>
+            <button className="trade-button">거래 신청하기</button>
           </div>
-          <p className="trade-price">
-            {Number(post.price).toLocaleString()}원
-          </p>
-          <p className="trade-description">{post.description}</p>
-          <button className="trade-button">거래 신청하기</button>
+        </div>
+
+        <div className="comment-box">
+          <h3>댓글</h3>
+          {comments.length > 0 ? (
+            comments.map((comment) => (
+              <div key={comment.comment_id} className="comment">
+                <p className="comment-author">{comment.author}</p>
+                <p className="comment-date">
+                  {new Date(comment.date).toLocaleDateString()}
+                </p>
+                <p>{comment.text}</p>
+              </div>
+            ))
+          ) : (
+            <p className="no-comment">댓글이 없습니다.</p>
+          )}
         </div>
       </div>
-
-      <div className="comment-box">
-        <h3>댓글</h3>
-        {comments.length > 0 ? (
-          comments.map((comment) => (
-            <div key={comment.comment_id} className="comment">
-              <p className="comment-author">{comment.author}</p>
-              <p className="comment-date">
-                {new Date(comment.date).toLocaleDateString()}
-              </p>
-              <p>{comment.text}</p>
-            </div>
-          ))
-        ) : (
-          <p className="no-comment">댓글이 없습니다.</p>
-        )}
-      </div>
-    </div>
+    </>
   );
 };
 
