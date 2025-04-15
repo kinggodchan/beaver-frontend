@@ -19,7 +19,7 @@ const Navbar = () => {
         </div>
         <div className="collapse navbar-collapse" id="myNavbar">
           <ul className="nav navbar-nav navbar-right">
-			<li className="dropdown">
+			      <li className="dropdown">
               <a className="dropdown-toggle" data-toggle="dropdown" href="#">
                 팀 <span className="caret"></span>
               </a>
@@ -40,8 +40,15 @@ const Navbar = () => {
               </ul>
             </li>
             <li><a href="/contact">문의하기</a></li>
-            <li><a href="/signup">회원가입</a></li>
-            <li><a href="/login">로그인</a></li>
+            {/* {!isLoggedIn ? (
+              <>
+              <li><a href="/signup">회원가입</a></li>
+              <li><a href="/login">로그인</a></li>
+              </>
+            ):(
+              <li><a href="/mypage">내 정보</a></li>
+            )
+            } */}
             <li><a href="#"><span className="glyphicon glyphicon-search"></span></a></li>
           </ul>
         </div>
