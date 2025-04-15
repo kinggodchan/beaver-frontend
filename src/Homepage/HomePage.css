@@ -29,10 +29,10 @@
   overflow: hidden;
 
   /* 항상 하단 고정 */
-  position: fixed;
+  /* position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 1000; */
 }
 
 
