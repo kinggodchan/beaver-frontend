@@ -96,12 +96,13 @@ const PostDetail = ({ boardId }) => {
   if (!post) return <p>게시글을 찾을 수 없습니다.</p>;
 
   return (
+    <>
+    <Header />
     <div className="post-detail-container">
-      <Header />
       <div className="post-wrapper">
         <div className="post-content-box">
           <h1>{post.title}</h1>
-          <img src={post.image} alt={post.title} className="post-image" />
+          <img src={post.file} alt={post.title} className="post-image" />
           <p className="post-content">{post.content}</p>
         </div>
 
@@ -119,6 +120,7 @@ const PostDetail = ({ boardId }) => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

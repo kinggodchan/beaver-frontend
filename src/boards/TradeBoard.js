@@ -114,7 +114,7 @@ const TradeBoard = () => {
     style={{ position: "relative" }}
   >
     <img
-      src={post.imageUrl}
+      src={post.file}
       alt={post.title}
       className="info-image"
     />

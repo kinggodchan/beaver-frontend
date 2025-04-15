@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../Homepage/HomePage.css";
-import soccerImage from "../soccer.png";
+import soccerImage from "../soccer1.png";
 import Header from "../component/Header";
 
 const HomePage = () => {
