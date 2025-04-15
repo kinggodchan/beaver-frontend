@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Navbar, Nav, Container, Image } from "react-bootstrap";
+import { Navbar, Nav, Container} from "react-bootstrap";
 //import "./Header.css";
 
 const Header = () => {

@@ -27,7 +27,9 @@ const TradeDetail = () => {
   }, [id, boardId]);
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/boards/trade-posts/${id}`).then((res) => setPost(res.data));
+    axios
+      .get(`http://localhost:3000/boards/trade-posts/${id}`)
+      .then((res) => setPost(res.data));
 
     axios
       .get("http://localhost:3000/api/auth/current-user", {
@@ -40,7 +42,6 @@ const TradeDetail = () => {
   useEffect(() => {
     fetchComments();
   }, [fetchComments]);
-
 
   const handleUpdateComment = async (commentId, content) => {
     try {
@@ -58,9 +59,12 @@ const TradeDetail = () => {
 
   const handleDeleteComment = async (commentId) => {
     try {
-      const res = await axios.delete(`http://localhost:3000/comments/${commentId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await axios.delete(
+        `http://localhost:3000/comments/${commentId}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       console.log("댓글 삭제 결과:", res.data);
       fetchComments();
     } catch (err) {
@@ -88,22 +92,21 @@ const TradeDetail = () => {
             <button className="trade-button">거래 신청하기</button>
           </div>
         </div>
-
+      </div>
       <div className="comment-box">
         <h3>댓글</h3>
         {currentUser ? (
           <CommentForm
-  onSubmit={(content) => {
-    return axios
-      .post(
-        `http://localhost:3000/comments/2/${id}`,
-        { content },
-        { headers: { Authorization: `Bearer ${token}` } }
-      )
-      .then(() => fetchComments());
-  }}
-/>
-
+            onSubmit={(content) => {
+              return axios
+                .post(
+                  `http://localhost:3000/comments/2/${id}`,
+                  { content },
+                  { headers: { Authorization: `Bearer ${token}` } }
+                )
+                .then(() => fetchComments());
+            }}
+          />
         ) : (
           <p style={{ color: "gray" }}>로그인 후 댓글을 작성할 수 있습니다.</p>
         )}
