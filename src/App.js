@@ -23,7 +23,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true); // 필요시 false로 변경
   const [user, setUser] = useState({ name: "손흥민", level: "실력 프로" });
 
-  //  로그아웃 핸들러
+  // 로그아웃 핸들러
   const handleLogout = () => {
     setIsLoggedIn(false);
     setUser(null);
@@ -36,9 +36,9 @@ function App() {
       <Route path="/team/create" element={<TeamCreatePage />} />
       <Route path="/team/:teamId" element={<TeamPage />} />
       <Route path="/board/information" element={<PostBoard />} />
-      <Route path="/board/information/:id" element={<PostDetail />} />
+      <Route path="/board/information/:id" element={<PostDetail boardId={1} />} />
       <Route path="/board/trade" element={<TradeBoard />} />
-      <Route path="/boards/trade-posts/:id" element={<TradeDetail />} />
+      <Route path="/boards/trade-posts/:id" element={<TradeDetail boardId={2} />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/signup" element={<Signup />} />
