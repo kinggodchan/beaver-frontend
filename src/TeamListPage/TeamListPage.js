@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import TeamList from "./TeamList";
 import TeamPagination from "./Pagination";
-import Header from "../component/Header";
 import { Button, Container, Form, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
@@ -44,7 +43,6 @@ const navigate = useNavigate();
 
 return (
   <div>
-    <Header />
     <Container className="my-4">
       <Row className="align-items-center justify-content-between">
         {/* 왼쪽 버튼 */}

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Header from "../component/Header";
 import "./InquiryDetail.css";
 
 const InquiryDetail = () => {
@@ -17,7 +16,6 @@ const InquiryDetail = () => {
 
   return (
     <>
-      <Header />
       <div className="inquiry-detail-container">
         {inquiry ? (
           <>

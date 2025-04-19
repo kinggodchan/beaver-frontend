@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./ContactPage.css";
-import Header from "../component/Header";
 
 const ContactPage = () => {
   const navigate = useNavigate();
@@ -30,11 +29,9 @@ const ContactPage = () => {
       alert("❌ 문의 등록에 실패했습니다. 다시 시도해 주세요.");
     }
   };
-  
 
   return (
     <>
-      <Header />
       <div className="contact-container">
         <div className="contact-content">
           <img src="/question.png" alt="Question" className="question-image" />

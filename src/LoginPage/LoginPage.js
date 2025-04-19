@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Form, Button, Container, Card, Alert } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Header from "../component/Header";
 import "./LoginPage.css";
 
 const API_URL = "http://localhost:3000/api/auth/signin";
@@ -36,14 +35,12 @@ const LoginPage = () => {
       setError("이메일 또는 비밀번호가 올바르지 않습니다.");
     }
   };
-
-  return (
-    <>
-      <Header />
-      <Container className="login-container">
-        <Card className="login-card">
-          <Card.Body>
-            <h3 className="login-title">🔐 로그인</h3>
+  return (  
+    <>   
+      <Container className="login-container">  
+        <Card className="login-card">  
+          <Card.Body>  
+            <h3 className="login-title">🔐 로그인</h3>  
 
             {error && <Alert variant="danger">{error}</Alert>}
 

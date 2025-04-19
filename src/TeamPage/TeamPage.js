@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-import Header from "../component/Header";
 import TeamInfo from "./TeamInfo";
 import TeamMembers from "./TeamMembers";
 import MatchSchedule from "./MatchSchedule";
@@ -99,7 +98,6 @@ const TeamPage = () => {
 
   return (
     <>
-      <Header />
       <Container className="my-4">
         <Row>
           <Col md={6}>

@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./PostDetail.css";
-import Header from "../component/Header";
 import CommentForm from "../component/comment/CommentForm";
 import CommentList from "../component/comment/CommentList";
 
@@ -97,7 +96,6 @@ const PostDetail = ({ boardId }) => {
 
   return (
     <>
-    <Header />
     <div className="post-detail-container">
       <div className="post-wrapper">
         <div className="post-content-box">

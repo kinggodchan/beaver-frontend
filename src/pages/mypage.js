@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Header from "../component/Header";
 import "./mypage.css";
 
 const API_BASE_URL = "http://localhost:3000/api";
@@ -37,7 +36,6 @@ const MyPage = () => {
 
   return (
     <div className="mypage-container">
-      <Header />
       <div className="mypage-content">
         <div className="user-info-section">
           {/* <img src="/image-11.png" alt="유저 이미지" className="player-image" /> */}
