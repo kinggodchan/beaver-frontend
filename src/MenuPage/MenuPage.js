@@ -36,7 +36,7 @@ const MenuPage = ({ onClose }) => {
               <li><Link to="/team">팀 리스트</Link></li>
               <li><Link to="/team/match">팀 추천</Link></li>
               <li><Link to="/team/ranking">팀 랭킹</Link></li>
-              <li><Link to="/match">풋살 매치</Link></li>
+              <li><Link to="/match">경기 목록</Link></li>
             </ul>
           </CSSTransition>
         </li>

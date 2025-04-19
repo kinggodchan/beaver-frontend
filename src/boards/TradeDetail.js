@@ -92,7 +92,6 @@ const TradeDetail = () => {
             <button className="trade-button">거래 신청하기</button>
           </div>
         </div>
-      </div>
       <div className="comment-box">
         <h3>댓글</h3>
         {currentUser ? (
@@ -119,6 +118,7 @@ const TradeDetail = () => {
           onUpdate={handleUpdateComment}
           onDelete={handleDeleteComment}
         />
+      </div>
       </div>
     </>
   );

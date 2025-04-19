@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Card, Alert } from "react-bootstrap";
 import axios from "axios";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from "../component/Header";
 import "./LoginPage.css";
 
@@ -9,8 +9,8 @@ const API_URL = "http://localhost:3000/api/auth/signin";
 
 const LoginPage = () => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const backTo = location.state?.from || "/"; // 이전 위치 or 홈으로
+  //const location = useLocation();
+  //const backTo = location.state?.from || "/"; // 이전 위치 or 홈으로
 
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
@@ -30,7 +30,7 @@ const LoginPage = () => {
       localStorage.setItem("user", JSON.stringify(user));
 
       // 로그인 성공 후 이동
-      navigate(backTo);
+      navigate("/");
     } catch (err) {
       console.error("로그인 실패:", err);
       setError("이메일 또는 비밀번호가 올바르지 않습니다.");

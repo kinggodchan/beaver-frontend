@@ -16,9 +16,12 @@ const MatchListPage = () => {
     const fetchMatches = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(
-          `${API_BASE_URL}/date/${selectedDate.toISOString().split("T")[0]}`
-        );
+
+        const localDate = new Date(selectedDate.getTime() + 9 * 60 * 60 * 1000);
+        const formattedDate = localDate.toISOString().split("T")[0];
+
+        const res = await axios.get(`${API_BASE_URL}/date/${formattedDate}`);
+
         setMatches(res.data.data);
       } catch (err) {
         console.error("경기 목록 불러오기 실패", err);
@@ -34,9 +37,22 @@ const MatchListPage = () => {
     <>
       <Header />
       <Container className="my-4">
-        <h2 className="mb-4">풋살 매치</h2>
-        <Image src="/match.png" alt="풋살 배경" fluid className="w-100" style={{ maxHeight: "250px", objectFit: "cover", margin:"0px 0px 40px 0px" }} />
-        <DateCarousel selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
+        <h2 className="mb-4">경기 목록</h2>
+        <Image
+          src="/match.png"
+          alt="풋살 배경"
+          fluid
+          className="w-100"
+          style={{
+            maxHeight: "250px",
+            objectFit: "cover",
+            margin: "0px 0px 40px 0px",
+          }}
+        />
+        <DateCarousel
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+        />
 
         <div className="mt-4">
           {loading ? (
