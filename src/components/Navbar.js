@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("accessToken");
+    setIsLoggedIn(!!token);
+  }, [location]);
+
   return (
     <nav className="navbar navbar-default navbar-fixed-top">
       <div className="container-fluid">
@@ -24,10 +33,10 @@ const Navbar = () => {
                 팀 <span className="caret"></span>
               </a>
               <ul className="dropdown-menu">
-                <li><a href="/team">팀 목록</a></li>
-                <li><a href="/teamMatch">팀 추천</a></li>
-                <li><a href="/teamRanking">팀 랭킹</a></li>
-                <li><a href="/match">경기 목록</a></li>
+                <li><Link to="/team">팀 목록</Link></li>
+                <li><Link to="/teamMatch">팀 추천</Link></li>
+                <li><Link to="/teamRanking">팀 랭킹</Link></li>
+                <li><Link to="/match">경기 목록</Link></li>
               </ul>
             </li>
             <li className="dropdown">
@@ -35,21 +44,21 @@ const Navbar = () => {
                 게시판 <span className="caret"></span>
               </a>
               <ul className="dropdown-menu">
-                <li><a href="/board/information">정보 게시판</a></li>
-                <li><a href="/board/trade">장터 게시판</a></li>
+                <li><Link to="/board/information">정보 게시판</Link></li>
+                <li><Link to="/board/trade">장터 게시판</Link></li>
               </ul>
             </li>
-            <li><a href="/contact">문의하기</a></li>
-            {/* {!isLoggedIn ? (
+            <li><Link to="/contact">문의하기</Link></li>
+            {!isLoggedIn ? (
               <>
-              <li><a href="/signup">회원가입</a></li>
-              <li><a href="/login">로그인</a></li>
+              <li><Link to="/signup">회원가입</Link></li>
+              <li><Link to="/login">로그인</Link></li>
               </>
             ):(
-              <li><a href="/mypage">내 정보</a></li>
+              <li><Link to="/mypage">내 정보</Link></li>
             )
-            } */}
-            <li><a href="#"><span className="glyphicon glyphicon-search"></span></a></li>
+            }
+            
           </ul>
         </div>
       </div>
