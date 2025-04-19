@@ -16,7 +16,9 @@ import TradeDetail from "./boards/TradeDetail";
 import InquiryList from "./Inquiry/InquiryList";
 import InquiryDetail from "./Inquiry/InquiryDetail";
 import MyPage from "./pages/mypage";
+import TeamRecommendPage from "./pages/TeamRecommendPage";
 import BodyContent from "./components/BodyContent";
+>>>>>>> master
 
 function App() {
   // 로그인 상태와 사용자 정보 선언
@@ -45,6 +47,7 @@ function App() {
       <Route path="/match" element={<MatchListPage />} />
       <Route path="/match/create" element={<MatchCreatePage />} />
       <Route path="/match/:matchId" element={<MatchDetailPage />} />
+      <Route path="/team-recommend" element={<TeamRecommendPage/>} />
       <Route path="/inquiry" element={<InquiryList />} />
       <Route path="/inquiry/:id" element={<InquiryDetail />} />
       <Route
