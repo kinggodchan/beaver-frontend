@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./PostBoard.css";
-import Header from "../component/Header";
 
 const PostBoard = () => {
   const [posts, setPosts] = useState([]);
@@ -45,7 +44,6 @@ const PostBoard = () => {
 
   return (
     <>
-      <Header />
     <div className="info-board">
       <div className="post-board-container">
         <div className="sidebar">

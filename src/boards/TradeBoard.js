@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; // ✅ Link 추가
 import axios from "axios";
-import Header from "../component/Header";
 import "./PostBoard.css"; // 동일한 스타일 사용
 
 const TradeBoard = () => {
@@ -55,7 +54,6 @@ const TradeBoard = () => {
 
   return (
     <>
-      <Header />
       <div className="info-board">
         <div className="post-board-container">
           {/* 필터 영역 */}

@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import MenuPage from "./MenuPage/MenuPage";
 import PostBoard from "./boards/PostBoard";
 import TradeBoard from "./boards/TradeBoard";
-import HomePage from "./Homepage/HomePage";
-import TeamPage from './TeamPage/TeamPage';
-import TeamCreatePage from './TeamCreate/TeamCreatePage';
-import TeamListPage from './TeamListPage/TeamListPage';
+import TeamPage from "./TeamPage/TeamPage";
+import TeamCreatePage from "./TeamCreate/TeamCreatePage";
+import TeamListPage from "./TeamListPage/TeamListPage";
 import ContactPage from "./contact/ContactPage";
 import LoginPage from "./LoginPage/LoginPage";
-import PostDetail from "./boards/PostDetail";  
+import PostDetail from "./boards/PostDetail";
 import Signup from "./Signup/Signup";
 import MatchListPage from "./MatchPage/MatchListPage";
 import MatchCreatePage from "./MatchCreatePage/MatchCreatePage";
 import MatchDetailPage from "./MatchDetailPage/MatchDetailPage";
-import TradeDetail from "./boards/TradeDetail"; 
+import TradeDetail from "./boards/TradeDetail";
 import InquiryList from "./Inquiry/InquiryList";
 import InquiryDetail from "./Inquiry/InquiryDetail";
 import MyPage from "./pages/mypage";
+import BodyContent from "./components/BodyContent";
 
 function App() {
   // 로그인 상태와 사용자 정보 선언
@@ -32,8 +31,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/menu" element={<MenuPage />} />
+      <Route path="/" element={<BodyContent />} />
       <Route path="/team" element={<TeamListPage />} />
       <Route path="/team/create" element={<TeamCreatePage />} />
       <Route path="/team/:teamId" element={<TeamPage />} />
@@ -49,7 +47,12 @@ function App() {
       <Route path="/match/:matchId" element={<MatchDetailPage />} />
       <Route path="/inquiry" element={<InquiryList />} />
       <Route path="/inquiry/:id" element={<InquiryDetail />} />
-      <Route path="/mypage" element= {<MyPage isLoggedIn={isLoggedIn} user={user} onLogout={handleLogout}/>}/>
+      <Route
+        path="/mypage"
+        element={
+          <MyPage isLoggedIn={isLoggedIn} user={user} onLogout={handleLogout} />
+        }
+      />
     </Routes>
   );
 }
