@@ -1,0 +1,87 @@
+.find-email-wrapper {
+    max-width: 500px;
+    margin: 50px auto;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  .tabs {
+    display: flex;
+    border-bottom: 2px solid #2e4600;
+  }
+  
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 14px 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .tab.active {
+    background-color: #2e4600;
+    color: #fff;
+  }
+  
+  .find-box {
+    padding: 30px;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    text-align: center;
+  }
+  
+  .find-box h2 {
+    margin-bottom: 25px;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .find-email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .find-email-form input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+  }
+  
+  .phone-row {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .phone-row input {
+    flex: 1;
+  }
+  
+  .phone-row button {
+    padding: 10px 12px;
+    background: #2e4600;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .next-btn {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #2e4600;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .result {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
+  
