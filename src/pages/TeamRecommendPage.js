@@ -4,7 +4,6 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './TeamRecommendPage.css';
-import Header from "../component/Header";
 
 const CustomNextArrow = ({ onClick }) => (
   <div className="custom-arrow next" onClick={onClick}>
@@ -53,7 +52,6 @@ const TeamRecommendPage = () => {
 
   return (
     <>
-      <Header />
       <div className="team-recommend-page">
 
         {/* 좌측 유저 정보 */}
