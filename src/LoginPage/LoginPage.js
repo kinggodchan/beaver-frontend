@@ -64,7 +64,7 @@ const LoginPage = () => {
             </Form>
             <div className="login-links mt-3">
               <Link to="/find-email">아이디 찾기</Link> |{" "}
-              <Link to="/password/email">비밀번호 찾기</Link> |{" "}
+              <Link to="/password/enter-email">비밀번호 찾기</Link> |{" "}
               <Link to="/signup">회원가입</Link>
             </div>
           </Card.Body>
