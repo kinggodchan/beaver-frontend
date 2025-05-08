@@ -1,60 +1,45 @@
+/* InquiryDetail.css */
+
+/* 전체 컨테이너 스타일 */
 .inquiry-detail-container {
-    width: 60%;
-    margin: 50px auto;
-    font-size: 15px;
-  }
-  
-  .inquiry-detail-container h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-  
-  .inquiry-detail-container p {
-    margin: 10px 0;
-    line-height: 1.6;
-  }
-  
-  .inquiry-meta {
-    color: #777;
-    font-size: 13px;
-    margin-bottom: 30px;
-    border-top: 1px solid #ddd;
-    padding-top: 10px;
-  }
-  
-  /* 댓글 영역 */
-  .comments h3 {
-    margin-top: 40px;
-    font-size: 18px;
-    border-top: 1px solid #ccc;
-    padding-top: 20px;
-  }
-  
-  .comment-box {
-    border: 1px solid #eee;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #fafafa;
-    border-radius: 6px;
-  }
-  
-  .reply-box {
-    margin-left: 20px;
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #eaeaea;
-    border-left: 3px solid #999;
-    border-radius: 4px;
-  }
-  
-  .comment-box p,
-  .reply-box p {
-    margin: 5px 0;
-  }
-  
-  .comment-box small,
-  .reply-box small {
-    color: #888;
-    font-size: 12px;
-  }
-  
+  width: 60%;
+  margin: 0 auto;
+  padding: 100px 20px 80px; /* 상단과 하단 여백 확보 */
+  font-size: 15px;
+  min-height: calc(100vh - 200px); /* 화면 높이에 따라 유연하게 조정 */
+  box-sizing: border-box;
+}
+
+/* 제목 스타일 */
+.inquiry-detail-container h2 {
+  font-size: 24px;
+  margin-bottom: 100px;
+  color: #333;
+}
+
+/* 작성자 정보 */
+.inquiry-info {
+  margin-bottom: 40px;
+}
+
+.inquiry-info p {
+  margin: 8px 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* 메타 정보 (선 추가) */
+.inquiry-meta {
+  color: #777;
+  font-size: 13px;
+  margin-bottom: 30px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+/* 작성일 등 메타 정보 */
+.comment-box small,
+.reply-box small {
+  color: #888;
+  font-size: 12px;
+}
