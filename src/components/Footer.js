@@ -10,13 +10,13 @@ const Footer = () => {
       <br />
       <br />
       <p>
-        Bootstrap Theme Made By{" "}
+        Kick Off Made By{" "}
         <a
           href="https://www.w3schools.com"
           data-toggle="tooltip"
           title="Visit w3schools"
         >
-          www.w3schools.com
+          kim and lee
         </a>
       </p>
     </footer>
