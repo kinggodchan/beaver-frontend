@@ -95,7 +95,7 @@ const PostBoard = () => {
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
         >
-          ← Previous
+          ← 이전
         </button>
 
         {Array.from({ length: totalPages }, (_, index) => (
@@ -112,7 +112,7 @@ const PostBoard = () => {
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
         >
-          Next →
+          다음 →
         </button>
       </div>
     </div>

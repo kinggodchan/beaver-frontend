@@ -87,7 +87,6 @@ const TradeDetail = () => {
               {Number(post.price).toLocaleString()}원
             </p>
             <p className="trade-description">{post.description}</p>
-            <button className="trade-button">거래 신청하기</button>
           </div>
         </div>
       <div className="comment-box">
