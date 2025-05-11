@@ -1,16 +1,19 @@
-/* InquiryList.css */
 .inquiry-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px 40px; /* 상단 패딩을 60px로 늘림 */
+  box-sizing: border-box;
+}
+
+.inquiry-header {
   text-align: center;
+  margin-bottom: 20px; /* 제목과 테이블 사이 간격 증가 */
 }
 
 .inquiry-table {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   border-collapse: collapse;
-  font-size: 16px;
+  margin-bottom: 40px; /* 테이블과 버튼 사이 여백 증가 */
 }
 
 .inquiry-table th,
@@ -20,45 +23,27 @@
   text-align: center;
 }
 
-.inquiry-table th {
-  background-color: #f7f7f7;
-  font-weight: bold;
+.inquiry-title:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
-.inquiry-table tr:hover {
-  background-color: #f1f1f1;
+.inquiry-footer {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.search-bar {
-  width: 300px;
-  padding: 8px;
-  margin-right: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.search-button {
-  padding: 8px 16px;
+.write-button {
+  background-color: #777;
+  color: white;
   border: none;
-  background-color: #333;
-  color: white;
+  padding: 10px 16px;
+  font-size: 14px;
   border-radius: 4px;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
-.pagination {
-  margin-top: 20px;
-}
-
-.pagination button {
-  margin: 0 5px;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  background-color: white;
-  cursor: pointer;
-}
-
-.pagination .active {
-  background-color: #333;
-  color: white;
+.write-button:hover {
+  background-color: #0056b3;
 }
