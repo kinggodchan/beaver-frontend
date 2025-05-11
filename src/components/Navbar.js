@@ -48,7 +48,7 @@ const Navbar = () => {
                 <li><Link to="/board/trade">장터 게시판</Link></li>
               </ul>
             </li>
-            <li><Link to="/contact">문의하기</Link></li>
+            <li><Link to="/inquiry">문의하기</Link></li>
             {!isLoggedIn ? (
               <>
               <li><Link to="/signup">회원가입</Link></li>
