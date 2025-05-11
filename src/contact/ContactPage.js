@@ -85,8 +85,8 @@ const ContactPage = () => {
             </div>
 
             <div className="button-group">
-              <button type="submit">Submit</button>
-              <button type="button" onClick={() => navigate("/inquiry")}>List</button>
+              <button type="submit">제출</button>
+              <button type="button" onClick={() => navigate("/inquiry")}>목록</button>
             </div>
           </form>
         </div>
