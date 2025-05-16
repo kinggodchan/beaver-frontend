@@ -1,82 +1,109 @@
 .mypage-container {
-  font-family: "Arial", sans-serif;
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #333;
 }
 
-.mypage-content {
+.mypage-header {
   display: flex;
-  justify-content: space-around;
-  margin-top: 50px;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-.user-info-section {
+.mypage-main {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 30px;
   align-items: center;
 }
 
-.player-image {
-  width: 100px;
-  height: auto;
+.profile-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
-.user-name {
-  font-size: 24px;
-  margin-top: 10px;
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  object-fit: cover;
 }
 
-.user-role {
+.schedule-box {
+  flex: 1.5;
+  display: flex;
+  justify-content: center;
+}
+
+.schedule-content {
+  background-color: #f4f6fa;
+  padding: 16px 20px;
+  border-radius: 8px;
   font-size: 16px;
-  color: gray;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-.latest-match-box {
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px solid black;
+.calendar-icon {
+  font-size: 20px;
+  margin-right: 8px;
 }
 
 .menu-box {
-  border: 1px solid black;
-  padding: 20px;
-  border-radius: 20px;
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 16px;
 }
 
-.menu-box ul {
+.menu-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.menu-box li {
+.menu-list li {
+  padding: 10px 0;
+  font-size: 16px;
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
 }
 
-.menu-box li img {
-  width: 20px;
-  margin-right: 10px;
+.menu-list li a {
+  margin-left: 8px;
+  text-decoration: none;
+  color: #333;
 }
 
-/* 로그아웃 버튼 스타일 */
-.logout-button {
-  background-color: #ff4d4f;
-  color: white;
+.menu-list li.logout button {
+  background: none;
   border: none;
-  padding: 8px 12px;
-  margin-top: 10px;
+  color: #c00;
   cursor: pointer;
-  border-radius: 6px;
-  font-size: 14px;
-  width: 100%;
-  text-align: center;
+  font-size: 16px;
+  padding: 0;
+  margin-left: 8px;
 }
 
-.logout-button:hover {
-  background-color: #d9363e;
+.auth-links {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
 }
 
-.auth-section {
-  text-align: center;
-  margin-top: 30px;
+.auth-links a {
+  color: #2a61d1;
+  text-decoration: none;
+  font-weight: 600;
 }

@@ -42,9 +42,11 @@ const MatchListPage = () => {
           fluid
           className="w-100"
           style={{
-            maxHeight: "250px",
+            maxHeight: "180px",
             objectFit: "cover",
-            margin: "0px 0px 40px 0px",
+            marginLeft: "60px", 
+    marginRight: "10px",
+    marginBottom: "40px",
           }}
         />
         <DateCarousel

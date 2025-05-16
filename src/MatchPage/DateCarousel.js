@@ -1,5 +1,4 @@
 import React from "react";
-import { ButtonGroup, Button } from "react-bootstrap";
 
 const getNext7Days = () => {
   const days = [];
@@ -15,27 +14,46 @@ const getNext7Days = () => {
 const DateCarousel = ({ selectedDate, setSelectedDate }) => {
   const days = getNext7Days();
 
-  const formatDate = (date) => date.getDate(); // 숫자 일
+  const formatDate = (date) => date.getDate();
   const formatDay = (date) =>
-    date.toLocaleDateString("ko-KR", { weekday: "short" }); // 요일
+    date.toLocaleDateString("ko-KR", { weekday: "short" });
 
   return (
-    <ButtonGroup className="d-flex justify-content-center flex-wrap gap-2">
-      {days.map((day) => (
-        <Button
-          key={day.toISOString()}
-          variant={
-            selectedDate.toDateString() === day.toDateString()
-              ? "primary"
-              : "outline-secondary"
-          }
-          onClick={() => setSelectedDate(day)}
-        >
-          <div style={{ fontWeight: "bold" }}>{formatDate(day)}일</div>
-          <small>{formatDay(day)}</small>
-        </Button>
-      ))}
-    </ButtonGroup>
+    <div style={{ display: "flex", justifyContent: "center", gap: "16px", marginTop: "20px" }}>
+      {days.map((day) => {
+        const isSelected = selectedDate.toDateString() === day.toDateString();
+
+        return (
+          <div
+            key={day.toISOString()}
+            onClick={() => setSelectedDate(day)}
+            style={{
+              width: "56px",
+              height: "70px",
+              borderRadius: "12px",
+              backgroundColor: isSelected ? "#1a5eff" : "#f5f5f5",
+              color: isSelected ? "#ffffff" : "#000000",
+              textAlign: "center",
+              cursor: "pointer",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              fontWeight: isSelected ? "700" : "500",
+              boxShadow: isSelected ? "0 2px 8px rgba(0,0,0,0.15)" : "none",
+              transition: "all 0.2s ease-in-out",
+            }}
+          >
+            <div style={{ fontSize: "20px", fontWeight: "bold" }}>
+              {formatDate(day)}
+            </div>
+            <div style={{ fontSize: "12px", opacity: isSelected ? 0.95 : 0.6 }}>
+              {formatDay(day)}
+            </div>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 

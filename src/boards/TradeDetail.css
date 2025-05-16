@@ -1,6 +1,6 @@
 /* Ensure the entire page uses full height */
 body, html {
-  height: 10%;
+  height: 100%;
   margin: 0;
 }
 

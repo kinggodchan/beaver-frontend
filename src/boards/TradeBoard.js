@@ -106,7 +106,7 @@ const TradeBoard = () => {
           <div className="info-grid">
           {currentPosts.map((post) => (
   <Link
-    to={`/boards/trade-posts/${post.trade_post_id}`}  // ✅ 정확한 상세 페이지 경로
+    to={`/boards/trade-posts/${post.trade_post_id}`}  
     key={post.trade_post_id}
     className="info-card"
     style={{ position: "relative" }}
@@ -133,7 +133,7 @@ const TradeBoard = () => {
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
           >
-            ← Previous
+            ← 이전
           </button>
 
           {Array.from({ length: totalPages }, (_, index) => (
@@ -150,7 +150,7 @@ const TradeBoard = () => {
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
           >
-            Next →
+            다음 →
           </button>
         </div>
       </div>
