@@ -106,7 +106,7 @@ const TradeBoard = () => {
           <div className="info-grid">
           {currentPosts.map((post) => (
   <Link
-    to={`/boards/trade-posts/${post.trade_post_id}`}  // ✅ 정확한 상세 페이지 경로
+    to={`/boards/trade-posts/${post.trade_post_id}`}  
     key={post.trade_post_id}
     className="info-card"
     style={{ position: "relative" }}
