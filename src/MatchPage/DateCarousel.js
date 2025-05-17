@@ -31,7 +31,7 @@ const DateCarousel = ({ selectedDate, setSelectedDate }) => {
               width: "56px",
               height: "70px",
               borderRadius: "12px",
-              backgroundColor: isSelected ? "#1a5eff" : "#f5f5f5",
+              backgroundColor: isSelected ? "#228B22" : "#f5f5f5",
               color: isSelected ? "#ffffff" : "#000000",
               textAlign: "center",
               cursor: "pointer",
