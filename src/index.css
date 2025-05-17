@@ -78,6 +78,7 @@ h4 {
   color: #555;
 }
 .btn {
+  margin: 20px 0px;
   padding: 10px 20px;
   background-color: #333;
   color: #f1f1f1;
@@ -91,7 +92,6 @@ h4 {
   color: #000;
 }
 .modal-header,
-h4,
 .close {
   background-color: #333;
   color: #fff !important;

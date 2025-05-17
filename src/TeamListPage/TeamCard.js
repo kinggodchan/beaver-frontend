@@ -15,7 +15,7 @@ const TeamCard = ({ team }) => {
         variant="top"
         src={team.team_logo}
         alt={team.team_name}
-        style={{ height: "180px", objectFit: "contain" }}
+        style={{ height: "200px",width: "100%", padding: "1rem", objectFit: "contain" }}
       />
       <Card.Body>
         <Card.Title>{team.team_name}</Card.Title>

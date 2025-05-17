@@ -1,7 +1,7 @@
 /* 🔹 게시판 전체 레이아웃 */
 .info-board {
   max-width: 1200px;
-  margin: 200px auto 0;
+  margin: 100px auto 0;
   padding: 20px;
   padding-bottom: 80px; /* 푸터가 겹치지 않도록 하단 여백 추가 */
 }

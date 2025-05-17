@@ -43,7 +43,8 @@ const navigate = useNavigate();
 
 return (
   <div>
-    <Container className="my-4">
+    <div className="info-board">
+      <h2 className="mb-4">팀 목록</h2>
       <Row className="align-items-center justify-content-between">
         {/* 왼쪽 버튼 */}
         <Col xs="auto">
@@ -63,7 +64,7 @@ return (
           />
         </Col>
       </Row>
-    </Container>
+    </div>
 
     {loading ? (
       <p className="text-center mt-5">Loading...</p>

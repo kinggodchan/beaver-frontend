@@ -34,20 +34,12 @@ const MatchListPage = () => {
 
   return (
     <>
-      <Container className="my-4">
+      <div className="info-board">
         <h2 className="mb-4">경기 목록</h2>
         <Image
           src="/match.png"
           alt="풋살 배경"
           fluid
-          className="w-100"
-          style={{
-            maxHeight: "180px",
-            objectFit: "cover",
-            marginLeft: "60px", 
-    marginRight: "10px",
-    marginBottom: "40px",
-          }}
         />
         <DateCarousel
           selectedDate={selectedDate}
@@ -73,7 +65,7 @@ const MatchListPage = () => {
             </Row>
           )}
         </div>
-      </Container>
+      </div>
     </>
   );
 };

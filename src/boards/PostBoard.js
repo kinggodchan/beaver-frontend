@@ -45,6 +45,7 @@ const PostBoard = () => {
   return (
     <>
     <div className="info-board">
+      <h2 className="mb-4">정보 게시판</h2>
       <div className="post-board-container">
         <div className="sidebar">
           <h3>정렬</h3>

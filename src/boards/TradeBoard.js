@@ -55,6 +55,7 @@ const TradeBoard = () => {
   return (
     <>
       <div className="info-board">
+        <h2 className="mb-4">장터 게시판</h2>
         <div className="post-board-container">
           {/* 필터 영역 */}
           <aside className="sidebar">

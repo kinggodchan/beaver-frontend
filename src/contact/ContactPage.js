@@ -38,48 +38,48 @@ const ContactPage = () => {
 
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <label>Name</label>
+              <label>이름</label>
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Enter your name"
+                placeholder="이름을 입력하세요"
                 required
               />
             </div>
 
             <div className="form-group">
-              <label>Email</label>
+              <label>이메일</label>
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="Enter your email"
+                placeholder="이메일을 입력하세요"
                 required
               />
             </div>
 
             <div className="form-group">
-              <label>Phone</label>
+              <label>전화번호</label>
               <input
                 type="tel"
                 name="phone_number"
                 value={formData.phone_number}
                 onChange={handleChange}
-                placeholder="Enter your phone number"
+                placeholder="전화번호를 입력하세요"
                 required
               />
             </div>
 
             <div className="form-group">
-              <label>Message</label>
+              <label>문의 내용</label>
               <textarea
                 name="reason"
                 value={formData.reason}
                 onChange={handleChange}
-                placeholder="Enter your message"
+                placeholder="문의 내용을 입력하세요"
                 required
               ></textarea>
             </div>
