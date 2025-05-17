@@ -94,3 +94,29 @@
     color: white;
   }
   
+
+.write-button-container {
+  position: fixed;
+  bottom: 240px;
+  right: 250px;
+  z-index: 1000;
+}
+
+.write-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.write-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
