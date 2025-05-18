@@ -2,8 +2,6 @@
 .info-board {
   max-width: 1200px;
   margin: 100px auto 0;
-  padding: 20px;
-  padding-bottom: 80px; /* 푸터가 겹치지 않도록 하단 여백 추가 */
 }
 
 /* 🔹 게시판 본문과 사이드바 정렬 */
@@ -66,6 +64,7 @@
   background-color: #f1f1f1;
   color: #333;
   padding: 8px 12px;
+  margin: 0px 5px;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s;

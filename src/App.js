@@ -51,6 +51,7 @@ function App() {
       <Route path="/match/create" element={<MatchCreatePage />} />
       <Route path="/match/:matchId" element={<MatchDetailPage />} />
       <Route path="/team-recommend" element={<TeamRecommendPage/>} />
+      <Route path="/team-ranking" element={<TeamRecommendPage/>} />
       <Route path="/inquiry" element={<InquiryList />} />
       <Route path="/inquiry/:id" element={<InquiryDetail />} />
       <Route

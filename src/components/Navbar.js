@@ -34,8 +34,8 @@ const Navbar = () => {
               </a>
               <ul className="dropdown-menu">
                 <li><Link to="/team">팀 목록</Link></li>
-                <li><Link to="/teamMatch">팀 추천</Link></li>
-                <li><Link to="/teamRanking">팀 랭킹</Link></li>
+                <li><Link to="/team-recommend">팀 추천</Link></li>
+                <li><Link to="/team-ranking">팀 랭킹</Link></li>
                 <li><Link to="/match">경기 목록</Link></li>
               </ul>
             </li>
