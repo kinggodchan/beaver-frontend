@@ -17,6 +17,7 @@ import InquiryList from "./Inquiry/InquiryList";
 import InquiryDetail from "./Inquiry/InquiryDetail";
 import MyPage from "./pages/mypage";
 import TeamRecommendPage from "./pages/TeamRecommendPage";
+import TeamRankingPage from "./TeamRankingPage/TeamRankingPage";
 import BodyContent from "./components/BodyContent";
 import FindEmailPage from "./FindEmailPage/FindEmailPage";
 import PasswordResetFlow from "./pages/password/PasswordResetFlow";
@@ -52,7 +53,7 @@ function App() {
       <Route path="/match/create" element={<MatchCreatePage />} />
       <Route path="/match/:matchId" element={<MatchDetailPage />} />
       <Route path="/team-recommend" element={<TeamRecommendPage/>} />
-      <Route path="/team-ranking" element={<TeamRecommendPage/>} />
+      <Route path="/team-ranking" element={<TeamRankingPage/>} />
       <Route path="/inquiry" element={<InquiryList />} />
       <Route path="/inquiry/:id" element={<InquiryDetail />} />
       <Route path="/boards/trade-posts/create" element={<TradePostCreate />} />
