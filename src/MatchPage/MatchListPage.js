@@ -36,11 +36,12 @@ const MatchListPage = () => {
     <>
       <div className="info-board">
         <h2 className="mb-4">경기 목록</h2>
-        <Image
+        <div className="matchimg">
+        <img
           src="/match.png"
           alt="풋살 배경"
-          fluid
         />
+        </div>
         <DateCarousel
           selectedDate={selectedDate}
           setSelectedDate={setSelectedDate}

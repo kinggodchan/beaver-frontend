@@ -59,7 +59,7 @@ const TeamRecommendPage = () => {
         <div className="team-recommend-page">
           {/* 좌측 유저 정보 */}
           <div className="left-section">
-            <h2>{currentUser ? `${currentUser.username}님` : "님님님"}</h2>
+            <h2>{currentUser ? `${currentUser.username}님` : "여러분을 위한 팀 추천"}</h2>
             
             <p>오늘의 추천 팀을 확인해보세요!</p>
           </div>

@@ -20,7 +20,7 @@ const MatchCard = ({ match }) => {
   });
 
   return (
-    <Card className="mb-3 shadow-sm" onClick={handleClick} style={{ cursor: "pointer" }}>
+    <Card className="mb-3 shadow-sm" onClick={handleClick} style={{ width: "1000px", cursor: "pointer" }}>
       <Card.Body>
         <Row className="align-items-center">
           <Col xs={2} className="text-center">

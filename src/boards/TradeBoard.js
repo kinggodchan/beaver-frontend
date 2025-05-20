@@ -118,6 +118,7 @@ const TradeBoard = () => {
                   <p>{Number(post.price).toLocaleString()}원</p>
                 </div>
               </Link>
+              
             ))}
         {/* 작성하기 버튼: 6번째 카드 아래 오른쪽 정렬 */}
           <div className="write-button-container">

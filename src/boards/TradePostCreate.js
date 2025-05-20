@@ -41,7 +41,7 @@ const handleSubmit = async (e) => {
     );
 
     alert("등록되었습니다.");
-    navigate("/boards/trade-posts");
+    navigate("/board/trade");
   } catch (err) {
     if (axios.isAxiosError(err)) {
       alert("등록에 실패했습니다: " + (err.response?.data?.message || err.message));

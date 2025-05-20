@@ -26,7 +26,7 @@
 
 /* 🔹 개별 게시글 카드 */
 .info-card {
-  width: calc(33.333% - 16px);
+  width: 315px;
   background: white;
   border-radius: 8px;
   overflow: hidden;

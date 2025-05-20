@@ -1,7 +1,7 @@
-.team-list {
+.teamlistcontainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 30px;
   justify-content: space-around;
-  margin: 10px 210px;
+  margin: auto;
+  min-width: 720px;
+  width: 1200px;
 }

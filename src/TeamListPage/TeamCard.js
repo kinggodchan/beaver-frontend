@@ -10,7 +10,7 @@ const TeamCard = ({ team }) => {
   };
 
   return (
-    <Card className="mb-4 shadow-sm team-card" style={{ cursor: "pointer" }} onClick={handleClick}>
+    <Card className="mb-4 shadow-sm team-card" style={{ cursor: "pointer" , margin: "10px 0px"}} onClick={handleClick}>
       <Card.Img
         variant="top"
         src={team.team_logo}
