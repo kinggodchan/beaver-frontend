@@ -21,14 +21,24 @@ const RatingChart = ({ teamId }) => {
         );
         const ratingData = res.data.data;
 
-        // 시각화용 데이터 변환: after 값 기준
-        const formatted = ratingData.map((entry, index) => ({
-          match: `#${entry.matchId}`,
-          rating: entry.after,
-          date: new Date(entry.matchDate).toLocaleDateString(),
-        }));
+        if (ratingData.length > 0) {
+          const firstEntry = ratingData[0];
 
-        setChartData(formatted);
+          const formatted = [
+            {
+              match: "0", // x축 레이블
+              rating: firstEntry.before,
+              date: new Date(firstEntry.matchDate).toLocaleDateString(),
+            },
+            ...ratingData.map((entry, index) => ({
+              match: index+1,
+              rating: entry.after,
+              date: new Date(entry.matchDate).toLocaleDateString(),
+            })),
+          ];
+
+          setChartData(formatted);
+        }
       } catch (err) {
         console.error("그래프 데이터 불러오기 실패:", err);
       }
