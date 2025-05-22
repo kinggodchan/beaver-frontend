@@ -6,7 +6,7 @@ import TeamMembers from "./TeamMembers";
 import MatchSchedule from "./MatchSchedule";
 import { Container, Row, Col, Button, Alert } from "react-bootstrap";
 import JoinStatusTable from "./JoinStatusTable";
-
+import RatingChart from "./ratingChart.js"
 
 const API_BASE_URL = "http://localhost:3000/api";
 
