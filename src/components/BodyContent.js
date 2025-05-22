@@ -16,8 +16,7 @@ const BodyContent = () => {
           <div className="item active">
             <img src="soccer1.png" alt="New York" width="1200" height="700" />
             <div className="carousel-caption">
-              <h3>New York</h3>
-              <p>The atmosphere in New York is lorem ipsum.</p>
+              <h3>KICK OFF</h3>
             </div>
           </div>
 

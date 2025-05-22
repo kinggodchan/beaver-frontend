@@ -13,7 +13,7 @@ root.render(
     <BrowserRouter>
       <Navbar />
       <App />
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   </React.StrictMode>
 );

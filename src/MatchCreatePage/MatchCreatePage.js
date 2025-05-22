@@ -36,7 +36,7 @@ const MatchCreatePage = () => {
   };
 
   return (
-    <>
+    <div className="inquiry-container">
       <Container className="my-5" style={{ maxWidth: "600px" }}>
         <Card>
           <Card.Body>
@@ -75,7 +75,7 @@ const MatchCreatePage = () => {
           </Card.Body>
         </Card>
       </Container>
-    </>
+    </div>
   );
 };
 

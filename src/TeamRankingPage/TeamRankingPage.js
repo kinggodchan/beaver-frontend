@@ -38,6 +38,7 @@ const TeamRankingPage = () => {
       <Table striped bordered hover>
         <thead>
           <tr>
+            <th>순위</th>
             <th>이름</th>
             <th>경기</th>
             <th>승</th>
@@ -45,13 +46,14 @@ const TeamRankingPage = () => {
             <th>패</th>
             <th>득점</th>
             <th>실점</th>
-            <th>득실</th>
+            <th>득실점</th>
             <th>레이팅</th>
           </tr>
         </thead>
         <tbody>
-          {teamData.map((team) => (
+          {teamData.map((team, i) => (
             <tr key={team.id}>
+              <td>{i+1}</td>
               <td>{team.team_name}</td>
               <td>{team.games}</td>
               <td>{team.wins}</td>

@@ -97,7 +97,7 @@ const MatchDetailPage = () => {
   });
 
   return (
-    <>
+    <div className="inquiry-container">
       <Container className="my-4">
         <h3>📋 경기 상세 정보</h3>
         <Card>
@@ -128,8 +128,8 @@ const MatchDetailPage = () => {
                 </p>
                 {match.result && (
                   <p>
-                    <strong>📊 결과:</strong>{" "}
-                    {match.result.host_score} : {match.result.opponent_score}
+                    <strong>📊 결과:</strong> {match.result.host_score} :{" "}
+                    {match.result.opponent_score}
                   </p>
                 )}
               </Col>
@@ -146,20 +146,25 @@ const MatchDetailPage = () => {
                   </Button>
                 </div>
               )}
-
           </Card.Body>
         </Card>
-            {/* ✅ 주최팀 주장 전용 UI */}
-            {isHostCaptain && (
-              <>
-                <MatchJoinRequestList matchId={matchId} onUpdate={fetchMatchDetail} />
-              {
-                <MatchResultForm match={match} onResultSubmit={fetchMatchDetail} />
-              }
-              </>
-            )}
+        {/* ✅ 주최팀 주장 전용 UI */}
+        {isHostCaptain && (
+          <>
+            <MatchJoinRequestList
+              matchId={matchId}
+              onUpdate={fetchMatchDetail}
+            />
+            {
+              <MatchResultForm
+                match={match}
+                onResultSubmit={fetchMatchDetail}
+              />
+            }
+          </>
+        )}
       </Container>
-    </>
+    </div>
   );
 };
 

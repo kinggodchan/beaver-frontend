@@ -1,3 +1,4 @@
+import { div } from "framer-motion/client";
 import React from "react";
 import { Card, Row, Col, Badge } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
@@ -20,29 +21,40 @@ const MatchCard = ({ match }) => {
   });
 
   return (
-    <Card className="mb-3 shadow-sm" onClick={handleClick} style={{ width: "1000px", cursor: "pointer" }}>
-      <Card.Body>
-        <Row className="align-items-center">
-          <Col xs={2} className="text-center">
+    <div
+      className="panel panel-default mb-3 shadow-sm"
+      onClick={handleClick}
+      style={{ width: "1000px", cursor: "pointer", margin: "20px auto" }}
+    >
+      <div className="panel-body">
+        <div className="row" style={{ alignItems: "center" }}>
+          <div className="col-xs-2 text-center">
             <h5>{time}</h5>
-          </Col>
-          <Col xs={7}>
-            <div className="fw-bold">{match.location}</div>
+          </div>
+          <div className="col-xs-7">
+            <strong>{match.location}</strong>
             <div>
               {match.host_team.team_name}
               {match.opponent_team
                 ? ` vs ${match.opponent_team.team_name}`
                 : ""}
             </div>
-          </Col>
-          <Col xs={3} className="text-end">
-            <Badge bg={statusVariant} className="p-2">
+          </div>
+          <div className="col-xs-3 text-right">
+            <span
+              className={`label label-${statusVariant}`}
+              style={{
+                padding: "6px",
+                backgroundColor: "#232323", // 원하는 배경색
+                color: "#fff", // 글자색
+              }}
+            >
               {statusText}
-            </Badge>
-          </Col>
-        </Row>
-      </Card.Body>
-    </Card>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

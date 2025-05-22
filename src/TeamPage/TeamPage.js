@@ -7,11 +7,13 @@ import MatchSchedule from "./MatchSchedule";
 import { Container, Row, Col, Button, Alert } from "react-bootstrap";
 import JoinStatusTable from "./JoinStatusTable";
 
+
 const API_BASE_URL = "http://localhost:3000/api";
 
 const TeamPage = () => {
   const { teamId } = useParams();
   const [teamData, setTeamData] = useState(null);
+  const [teamRating, setTeamRating] = useState(null);
   const [teamMembers, setTeamMembers] = useState([]);
   const [teamSchedules, setTeamSchedules] = useState([]);
   const [currentUser, setCurrentUser] = useState(null); // 👈 로그인한 사용자
@@ -40,6 +42,11 @@ const TeamPage = () => {
         `${API_BASE_URL}/teams/${teamId}/detail`
       );
       if (teamResponse.data.success) setTeamData(teamResponse.data.data);
+
+      const ratingResponse = await axios.get(
+        `${API_BASE_URL}/teams/${teamId}/rating`
+      );
+      if (ratingResponse.data.success) setTeamRating(ratingResponse.data.data);
 
       const membersResponse = await axios.get(
         `${API_BASE_URL}/teams/${teamId}/members`
@@ -97,11 +104,11 @@ const TeamPage = () => {
   const isMember = teamMembers.some((member) => member.id === currentUser?.id);
 
   return (
-    <>
+    <div className="inquiry-container">
       <Container className="my-4">
         <Row>
           <Col md={6}>
-            <TeamInfo team={teamData} />
+            <TeamInfo team={teamData} rating={teamRating} />
           </Col>
           <Col md={6}>
             <TeamMembers team={teamData} members={teamMembers} />
@@ -110,7 +117,13 @@ const TeamPage = () => {
 
         <Row className="my-4">
           <Col>
-            <MatchSchedule matches={teamSchedules} isCaptain={isCaptain}/>
+            <RatingChart teamId={teamId} />
+          </Col>
+        </Row>
+
+        <Row className="my-4">
+          <Col>
+            <MatchSchedule matches={teamSchedules} isCaptain={isCaptain} />
           </Col>
         </Row>
 
@@ -132,17 +145,14 @@ const TeamPage = () => {
             {isCaptain && (
               <Row className="mt-4">
                 <Col>
-                  <JoinStatusTable
-                    teamId={teamId}
-                    onUpdate={fetchTeamData}
-                  />
+                  <JoinStatusTable teamId={teamId} onUpdate={fetchTeamData} />
                 </Col>
               </Row>
             )}
           </Col>
         </Row>
       </Container>
-    </>
+    </div>
   );
 };
 

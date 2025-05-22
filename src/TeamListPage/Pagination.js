@@ -9,25 +9,29 @@ const TeamPagination = ({ totalTeams, teamsPerPage, currentPage, setCurrentPage 
   const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
 
   return (
-    <Pagination className="justify-content-center my-4">
-      <Pagination.Prev
+    <div className="pagination">
+      <button
         onClick={() => setCurrentPage(currentPage - 1)}
         disabled={currentPage === 1}
-      />
+      >
+        ← 이전
+      </button>
       {pages.map((page) => (
-        <Pagination.Item
+        <button
           key={page}
-          active={page === currentPage}
+          className={currentPage === page ? "active" : ""}
           onClick={() => setCurrentPage(page)}
         >
           {page}
-        </Pagination.Item>
+        </button>
       ))}
-      <Pagination.Next
+      <button
         onClick={() => setCurrentPage(currentPage + 1)}
         disabled={currentPage === totalPages}
-      />
-    </Pagination>
+      >
+        다음 →
+      </button>
+    </div>
   );
 };
 
