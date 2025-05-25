@@ -121,20 +121,9 @@ const TeamPage = () => {
           </Col>
         </Row>
 
-        <Row className="my-4">
-          <Col>
-            <MatchSchedule matches={teamSchedules} isCaptain={isCaptain} />
-          </Col>
-        </Row>
-
         {/* ✅ 하단에 권한별 동작 */}
         <Row className="mt-4">
           <Col className="text-center">
-            {!isCaptain && !isMember && (
-              <Button variant="success" onClick={handleJoinRequest}>
-                ⚽ 팀 가입 신청
-              </Button>
-            )}
 
             {joinRequested && (
               <Alert variant="info" className="mt-2">
@@ -149,8 +138,21 @@ const TeamPage = () => {
                 </Col>
               </Row>
             )}
+            
+            {!isCaptain && !isMember && (
+              <Button variant="success" onClick={handleJoinRequest}>
+                ⚽ 팀 가입 신청
+              </Button>
+            )}
           </Col>
         </Row>
+
+        <Row className="my-4">
+          <Col>
+            <MatchSchedule matches={teamSchedules} isCaptain={isCaptain} />
+          </Col>
+        </Row>
+
       </Container>
     </div>
   );

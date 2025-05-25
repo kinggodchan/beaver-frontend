@@ -24,13 +24,18 @@ const CommentForm = ({ onSubmit }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <textarea
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          placeholder="댓글을 입력하세요"
-        />
-        <button type="submit">댓글 작성</button>
+      <form className="commentForm" onSubmit={handleSubmit}>
+        <div style={{ display: 'flex', alignItems: 'flex-end', gap: '8px' }}>
+          <textarea
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            placeholder="댓글을 입력하세요"
+            style={{ flex: 1, height: '60px', resize: 'none' }}
+          />
+          <button className="commentSubmit" type="submit">
+            댓글 작성
+          </button>
+        </div>
       </form>
       {error && <div>{error}</div>}
     </div>
