@@ -45,14 +45,22 @@ const MyPage = () => {
         <div className="schedule-box">
           <div className="schedule-content">
             <span className="calendar-icon">🗓</span>
-            최근 경기 일정: <strong>2025.03.02</strong>
+            최근 경기 일정: <strong>2025.05.18</strong>
           </div>
         </div>
       </div>
 
       <div className="menu-box">
         <ul className="menu-list">
-          <li>👥 <Link to={`/team/${currentUser?.teamId}`}>나의 팀</Link></li>
+          <li>
+  👥{" "}
+  {currentUser?.teamId ? (
+    <Link to={`/team/${currentUser.teamId}`}>나의 팀</Link>
+  ) : (
+    <span className="disabled-text">나의 팀</span>
+  )}
+</li>
+
           <li>🙍‍♂️ <Link to="/edit-profile">프로필 수정</Link></li>
           <li>⚙ <Link to="/settings">설정</Link></li>
           <li>📰 <Link to="/board/information">매거진</Link></li>
