@@ -22,6 +22,7 @@ import BodyContent from "./components/BodyContent";
 import FindEmailPage from "./FindEmailPage/FindEmailPage";
 import PasswordResetFlow from "./pages/password/PasswordResetFlow";
 import TradePostCreate from "./boards/TradePostCreate";
+import EditProfilePage from "./pages/EditProfilePage";
 
 function App() {
   // 로그인 상태와 사용자 정보 선언
@@ -49,6 +50,7 @@ function App() {
       <Route path="/password/*" element={<PasswordResetFlow />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/signup" element={<Signup />} />
+       <Route path="/edit-profile" element={<EditProfilePage />} />
       <Route path="/match" element={<MatchListPage />} />
       <Route path="/match/create" element={<MatchCreatePage />} />
       <Route path="/match/:matchId" element={<MatchDetailPage />} />
