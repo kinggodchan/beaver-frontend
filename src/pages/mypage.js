@@ -52,15 +52,7 @@ const MyPage = () => {
 
       <div className="menu-box">
         <ul className="menu-list">
-          <li>
-  👥{" "}
-  {currentUser?.teamId ? (
-    <Link to={`/team/${currentUser.teamId}`}>나의 팀</Link>
-  ) : (
-    <span className="disabled-text">나의 팀</span>
-  )}
-</li>
-
+          <li>👥 <Link to={`/team/${currentUser.teamId}`}>나의 팀</Link></li>
           <li>🙍‍♂️ <Link to="/edit-profile">프로필 수정</Link></li>
           <li>⚙ <Link to="/settings">설정</Link></li>
           <li>📰 <Link to="/board/information">매거진</Link></li>
