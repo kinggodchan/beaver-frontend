@@ -51,7 +51,7 @@ const InquiryList = () => {
               </td>
               <td>{inquiry.name}</td>
               <td>{new Date(inquiry.created_at).toLocaleDateString()}</td>
-              <td>0</td>
+              <td>3</td>
             </tr>
           ))}
         </tbody>
